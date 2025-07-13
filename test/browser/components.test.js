@@ -1,5 +1,5 @@
-import { createElement, render, Component, Fragment } from 'preact';
-import { setupRerender } from 'preact/test-utils';
+import { createElement, render, Component, Fragment } from 'avery';
+import { setupRerender } from 'avery/test-utils';
 import {
 	setupScratch,
 	teardown,
@@ -117,9 +117,9 @@ describe('Components', () => {
 			class Foo extends Component {
 				constructor(props) {
 					super(props);
-					// the following line made `this._nextState !== this.state` be truthy prior to the fix for preactjs/preact#2638
+					// the following line made `this._nextState !== this.state` be truthy prior to the fix for averyjs/avery#2638
 					this.state = {};
-					this.setState({ preact: 'awesome' });
+					this.setState({ avery: 'awesome' });
 				}
 			}
 
@@ -132,7 +132,7 @@ describe('Components', () => {
 			class Foo extends Component {
 				constructor(props) {
 					super(props);
-					this.setState({ preact: 'awesome' }, spy);
+					this.setState({ avery: 'awesome' }, spy);
 				}
 			}
 
@@ -384,7 +384,7 @@ describe('Components', () => {
 		});
 
 		it("should render components that don't pass args into the Component constructor (unistore pattern)", () => {
-			// Pattern unistore uses for connect: https://github.com/developit/unistore/blob/1df7cf60ac6fa1a70859d745fbaea7ea3f1b8d30/src/integrations/preact.js#L23
+			// Pattern unistore uses for connect: https://github.com/developit/unistore/blob/1df7cf60ac6fa1a70859d745fbaea7ea3f1b8d30/src/integrations/avery.js#L23
 			function Wrapper() {
 				instance = this;
 				this.state = STATE;
@@ -479,7 +479,7 @@ describe('Components', () => {
 		});
 
 		it("should render components that don't inherit from Component (unistore pattern)", () => {
-			// Pattern unistore uses for Provider: https://github.com/developit/unistore/blob/1df7cf60ac6fa1a70859d745fbaea7ea3f1b8d30/src/integrations/preact.js#L59
+			// Pattern unistore uses for Provider: https://github.com/developit/unistore/blob/1df7cf60ac6fa1a70859d745fbaea7ea3f1b8d30/src/integrations/avery.js#L59
 			function Provider() {
 				instance = this;
 				this.state = STATE;
@@ -615,9 +615,9 @@ describe('Components', () => {
 		expect(scratch.innerHTML).to.equal('<span>span in a component</span>');
 	});
 
-	// Test for Issue preactjs/preact#176
+	// Test for Issue averyjs/avery#176
 	it('should remove children when root changes to text node', () => {
-		/** @type {import('preact').Component} */
+		/** @type {import('avery').Component} */
 		let comp;
 
 		class Comp extends Component {
@@ -650,7 +650,7 @@ describe('Components', () => {
 		expect(scratch.innerHTML, 'switching to textnode 2').to.equal('asdf');
 	});
 
-	// Test for Issue preactjs/preact#1616
+	// Test for Issue averyjs/avery#1616
 	it('should maintain order when setting state (that inserts dom-elements)', () => {
 		let add, addTwice, reset;
 		const Entry = props => <div>{props.children}</div>;
@@ -727,7 +727,7 @@ describe('Components', () => {
 		);
 	});
 
-	// Test for Issue preactjs/preact#254
+	// Test for Issue averyjs/avery#254
 	it('should not recycle common class children with different keys', () => {
 		let idx = 0;
 		let msgs = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
@@ -1820,7 +1820,7 @@ describe('Components', () => {
 		expect(getDom(child)).to.equalNode(scratch.querySelector('.child'));
 	});
 
-	// preact/#1323
+	// avery/#1323
 	it('should handle hoisted component vnodes without DOM', () => {
 		let x = 0;
 		let mounted = '';

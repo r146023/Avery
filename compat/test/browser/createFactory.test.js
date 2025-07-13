@@ -1,4 +1,4 @@
-import React, { render, createElement, createFactory } from 'preact/compat';
+import React, { render, createElement, createFactory } from 'avery/compat';
 import { setupScratch, teardown } from '../../../test/_util/helpers';
 
 describe('createFactory', () => {

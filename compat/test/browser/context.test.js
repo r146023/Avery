@@ -1,4 +1,4 @@
-import { setupRerender } from 'preact/test-utils';
+import { setupRerender } from 'avery/test-utils';
 import { setupScratch, teardown } from '../../../test/_util/helpers';
 import React, {
 	render,
@@ -7,7 +7,7 @@ import React, {
 	Component,
 	useState,
 	useContext
-} from 'preact/compat';
+} from 'avery/compat';
 
 describe('components', () => {
 	/** @type {HTMLDivElement} */

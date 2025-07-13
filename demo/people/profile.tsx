@@ -1,6 +1,6 @@
 import { computed, observable } from 'mobx';
 import { observer } from 'mobx-react';
-import { Component } from 'preact';
+import { Component } from 'avery';
 import { RouteChildProps } from './router';
 import { store } from './store';
 

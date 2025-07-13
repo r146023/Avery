@@ -1,4 +1,4 @@
-import { useState } from 'preact/hooks';
+import { useState } from 'avery/hooks';
 
 export default function Contenteditable() {
 	const [value, setValue] = useState("Hey there<br />I'm editable!");

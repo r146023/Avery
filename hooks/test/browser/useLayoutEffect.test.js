@@ -1,12 +1,12 @@
-import { act } from 'preact/test-utils';
-import { createElement, render, Fragment, Component } from 'preact';
+import { act } from 'avery/test-utils';
+import { createElement, render, Fragment, Component } from 'avery';
 import {
 	setupScratch,
 	teardown,
 	serializeHtml
 } from '../../../test/_util/helpers';
 import { useEffectAssertions } from './useEffectAssertions';
-import { useLayoutEffect, useRef, useState } from 'preact/hooks';
+import { useLayoutEffect, useRef, useState } from 'avery/hooks';
 import { vi } from 'vitest';
 
 /** @jsx createElement */

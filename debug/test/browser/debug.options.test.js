@@ -7,10 +7,10 @@ import {
 	catchErrorSpy
 } from '../../../test/_util/optionSpies';
 
-import { createElement, render, Component } from 'preact';
-import { useState } from 'preact/hooks';
-import { setupRerender } from 'preact/test-utils';
-import 'preact/debug';
+import { createElement, render, Component } from 'avery';
+import { useState } from 'avery/hooks';
+import { setupRerender } from 'avery/test-utils';
+import 'avery/debug';
 import { setupScratch, teardown } from '../../../test/_util/helpers';
 import { vi } from 'vitest';
 

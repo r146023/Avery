@@ -17,38 +17,38 @@ const alias = {
 		root,
 		MINIFY ? 'compat/dist/compat.mjs' : 'compat/src/index.js'
 	),
-	'^preact$': path.join(root, MINIFY ? 'dist/preact.mjs' : 'src/index.js'),
-	'^preact/compat$': path.join(
+	'^avery$': path.join(root, MINIFY ? 'dist/avery.mjs' : 'src/index.js'),
+	'^avery/compat$': path.join(
 		root,
 		MINIFY ? 'compat/dist/compat.mjs' : 'compat/src/index.js'
 	),
-	'^preact/jsx-runtime$': path.join(
+	'^avery/jsx-runtime$': path.join(
 		root,
 		MINIFY ? 'jsx-runtime/dist/jsxRuntime.mjs' : 'jsx-runtime/src/index.js'
 	),
-	'^preact/jsx-runtime/src$': path.join(
+	'^avery/jsx-runtime/src$': path.join(
 		root,
 		MINIFY ? 'jsx-runtime/dist/jsxRuntime.mjs' : 'jsx-runtime/src'
 	),
-	'^preact/jsx-dev-runtime$': path.join(
+	'^avery/jsx-dev-runtime$': path.join(
 		root,
 		MINIFY
 			? 'jsx-dev-runtime/dist/jsx-dev-runtime.js'
 			: 'jsx-dev-runtime/src/index.js'
 	),
-	'^preact/debug$': path.join(
+	'^avery/debug$': path.join(
 		root,
 		MINIFY ? 'debug/dist/debug.mjs' : 'debug/src/index.js'
 	),
-	'^preact/devtools$': path.join(
+	'^avery/devtools$': path.join(
 		root,
 		MINIFY ? 'devtools/dist/devtools.js' : 'devtools/src/index.js'
 	),
-	'^preact/hooks$': path.join(
+	'^avery/hooks$': path.join(
 		root,
 		MINIFY ? 'hooks/dist/hooks.mjs' : 'hooks/src/index.js'
 	),
-	'^preact/test-utils$': path.join(
+	'^avery/test-utils$': path.join(
 		root,
 		MINIFY ? 'test-utils/dist/testUtils.mjs' : 'test-utils/src/index.js'
 	)
@@ -67,51 +67,51 @@ const rollupAlias = [
 			? path.join(root, 'compat/dist/compat.mjs')
 			: path.join(root, 'compat/src/index.js')
 	},
-	{ find: /^preact$/, replacement: path.join(root, 'src/index.js') },
+	{ find: /^avery$/, replacement: path.join(root, 'src/index.js') },
 	{
-		find: /^preact\/compat$/,
+		find: /^avery\/compat$/,
 		replacement: MINIFY
 			? path.join(root, 'compat/dist/compat.mjs')
 			: path.join(root, 'compat/src/index.js')
 	},
 	{
-		find: /^preact\/jsx-runtime$/,
+		find: /^avery\/jsx-runtime$/,
 		replacement: MINIFY
 			? path.join(root, 'jsx-runtime/dist/jsxRuntime.mjs')
 			: path.join(root, 'jsx-runtime/src/index.js')
 	},
 	{
-		find: /^preact\/jsx-runtime\/src$/,
+		find: /^avery\/jsx-runtime\/src$/,
 		replacement: MINIFY
 			? path.join(root, 'jsx-runtime/dist/jsxRuntime.mjs')
 			: path.join(root, 'jsx-runtime/src')
 	},
 	{
-		find: /^preact\/jsx-dev-runtime$/,
+		find: /^avery\/jsx-dev-runtime$/,
 		replacement: MINIFY
 			? path.join(root, 'jsx-runtime/dist/jsxRuntime.mjs')
 			: path.join(root, 'jsx-runtime/src/index.js')
 	},
 	{
-		find: /^preact\/debug$/,
+		find: /^avery\/debug$/,
 		replacement: MINIFY
 			? path.join(root, 'debug/dist/debug.mjs')
 			: path.join(root, 'debug/src/index.js')
 	},
 	{
-		find: /^preact\/devtools$/,
+		find: /^avery\/devtools$/,
 		replacement: MINIFY
 			? path.join(root, 'devtools/dist/devtools.mjs')
 			: path.join(root, 'devtools/src/index.js')
 	},
 	{
-		find: /^preact\/hooks$/,
+		find: /^avery\/hooks$/,
 		replacement: MINIFY
 			? path.join(root, 'hooks/dist/hooks.mjs')
 			: path.join(root, 'hooks/src/index.js')
 	},
 	{
-		find: /^preact\/test-utils$/,
+		find: /^avery\/test-utils$/,
 		replacement: MINIFY
 			? path.join(root, 'test-utils/dist/testUtils.mjs')
 			: path.join(root, 'test-utils/src/index.js')
@@ -133,14 +133,14 @@ for (let prop in mangleJson.props.props) {
 export default defineConfig({
 	resolve: {
 		alias: rollupAlias,
-		dedupe: ['preact']
+		dedupe: ['avery']
 	},
 	esbuild: {
 		loader: 'jsx',
 		include: /.*\.js$/,
 		exclude: ['node_nodules'],
 		jsx: 'transform',
-		jsxImportSource: 'preact',
+		jsxImportSource: 'avery',
 		jsxDev: true
 	},
 	plugins: [
@@ -179,15 +179,15 @@ export default defineConfig({
 	],
 	optimizeDeps: {
 		exclude: [
-			'preact',
-			'preact/compat',
-			'preact/test-utils',
-			'preact/debug',
-			'preact/hooks',
-			'preact/devtools',
-			'preact/jsx-runtime',
-			'preact/jsx-dev-runtime',
-			'preact-router',
+			'avery',
+			'avery/compat',
+			'avery/test-utils',
+			'avery/debug',
+			'avery/hooks',
+			'avery/devtools',
+			'avery/jsx-runtime',
+			'avery/jsx-dev-runtime',
+			'avery-router',
 			'react',
 			'react-dom'
 		],
@@ -215,7 +215,7 @@ export default defineConfig({
 			enabled: COVERAGE,
 			include: MINIFY
 				? [
-						'dist/preact.mjs',
+						'dist/avery.mjs',
 						'compat/dist/compat.mjs',
 						'devtools/dist/devtools.mjs',
 						'jsx-runtime/dist/jsxRuntime.mjs',

@@ -1,16 +1,16 @@
 import {
-	Options as PreactOptions,
-	Component as PreactComponent,
-	VNode as PreactVNode,
-	PreactContext,
+	Options as AveryOptions,
+	Component as AveryComponent,
+	VNode as AveryVNode,
+	AveryContext,
 	HookType,
 	ErrorInfo
 } from '../../src/internal';
 import { Reducer, StateUpdater } from '.';
 
-export { PreactContext };
+export { AveryContext };
 
-export interface Options extends PreactOptions {
+export interface Options extends AveryOptions {
 	/** Attach a hook that is invoked before a vnode is diffed. */
 	_diff?(vnode: VNode): void;
 	diffed?(vnode: VNode): void;
@@ -33,14 +33,14 @@ export interface ComponentHooks {
 }
 
 export interface Component
-	extends Omit<PreactComponent<any, any>, '_renderCallbacks'> {
+	extends Omit<AveryComponent<any, any>, '_renderCallbacks'> {
 	__hooks?: ComponentHooks;
 	// Extend to include HookStates
 	_renderCallbacks?: Array<HookState | (() => void)>;
 	_hasScuFromHooks?: boolean;
 }
 
-export interface VNode extends Omit<PreactVNode, '_component'> {
+export interface VNode extends Omit<AveryVNode, '_component'> {
 	_mask?: [number, number];
 	_component?: Component; // Override with our specific Component type
 }
@@ -92,7 +92,7 @@ export interface ReducerHookState<S = unknown, A = unknown>
 export interface ContextHookState extends BaseHookState {
 	/** Whether this hooks as subscribed to updates yet */
 	_value?: boolean;
-	_context?: PreactContext;
+	_context?: AveryContext;
 }
 
 export interface ErrorBoundaryHookState extends BaseHookState {

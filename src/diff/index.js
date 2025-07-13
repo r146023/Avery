@@ -19,7 +19,7 @@ import options from '../options';
 /**
  * @typedef {import('../internal').ComponentChildren} ComponentChildren
  * @typedef {import('../internal').Component} Component
- * @typedef {import('../internal').PreactElement} PreactElement
+ * @typedef {import('../internal').AveryElement} AveryElement
  * @typedef {import('../internal').VNode} VNode
  */
 
@@ -30,16 +30,16 @@ import options from '../options';
 
 /**
  * Diff two virtual nodes and apply proper changes to the DOM
- * @param {PreactElement} parentDom The parent of the DOM element
+ * @param {AveryElement} parentDom The parent of the DOM element
  * @param {VNode} newVNode The new virtual node
  * @param {VNode} oldVNode The old virtual node
  * @param {object} globalContext The current context object. Modified by
  * getChildContext
  * @param {string} namespace Current namespace of the DOM node (HTML, SVG, or MathML)
- * @param {Array<PreactElement>} excessDomChildren
+ * @param {Array<AveryElement>} excessDomChildren
  * @param {Array<Component>} commitQueue List of components which have callbacks
  * to invoke in commitRoot
- * @param {PreactElement} oldDom The current attached DOM element any new dom
+ * @param {AveryElement} oldDom The current attached DOM element any new dom
  * elements should be placed around. Likely `null` on first render (except when
  * hydrating). Can be a sibling DOM element when diffing Fragments that have
  * siblings. In most cases, it starts out as `oldChildren[0]._dom`.
@@ -420,18 +420,18 @@ function cloneNode(node) {
 
 /**
  * Diff two virtual nodes representing DOM element
- * @param {PreactElement} dom The DOM element representing the virtual nodes
+ * @param {AveryElement} dom The DOM element representing the virtual nodes
  * being diffed
  * @param {VNode} newVNode The new virtual node
  * @param {VNode} oldVNode The old virtual node
  * @param {object} globalContext The current context object
  * @param {string} namespace Current namespace of the DOM node (HTML, SVG, or MathML)
- * @param {Array<PreactElement>} excessDomChildren
+ * @param {Array<AveryElement>} excessDomChildren
  * @param {Array<Component>} commitQueue List of components which have callbacks
  * to invoke in commitRoot
  * @param {boolean} isHydrating Whether or not we are in hydration
  * @param {any[]} refQueue an array of elements needed to invoke refs
- * @returns {PreactElement}
+ * @returns {AveryElement}
  */
 function diffElementNodes(
 	dom,

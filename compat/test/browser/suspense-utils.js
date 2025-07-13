@@ -1,4 +1,4 @@
-import React, { Component, lazy } from 'preact/compat';
+import React, { Component, lazy } from 'avery/compat';
 import { vi } from 'vitest';
 
 const h = React.createElement;

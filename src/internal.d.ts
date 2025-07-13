@@ -1,6 +1,6 @@
 // Intentionally not using a relative path to take advantage of
 // the TS version resolution mechanism
-import * as preact from 'preact';
+import * as avery from 'avery';
 
 export enum HookType {
 	useState = 1,
@@ -26,9 +26,9 @@ export interface ErrorInfo {
 	componentStack?: string;
 }
 
-export interface Options extends preact.Options {
+export interface Options extends avery.Options {
 	/** Attach a hook that is invoked before render, mainly to check the arguments. */
-	_root?(vnode: ComponentChild, parent: preact.ContainerNode): void;
+	_root?(vnode: ComponentChild, parent: avery.ContainerNode): void;
 	/** Attach a hook that is invoked before a vnode is diffed. */
 	_diff?(vnode: VNode): void;
 	/** Attach a hook that is invoked after a tree was mounted or was updated. */
@@ -49,7 +49,7 @@ export interface Options extends preact.Options {
 	/** Attach a hook that fires when hydration can't find a proper DOM-node to match with */
 	_hydrationMismatch?(
 		vnode: VNode,
-		excessDomChildren: Array<PreactElement | null>
+		excessDomChildren: Array<AveryElement | null>
 	): void;
 }
 
@@ -62,14 +62,14 @@ export type ComponentChild =
 	| undefined;
 export type ComponentChildren = ComponentChild[] | ComponentChild;
 
-export interface FunctionComponent<P = {}> extends preact.FunctionComponent<P> {
+export interface FunctionComponent<P = {}> extends avery.FunctionComponent<P> {
 	// Internally, createContext uses `contextType` on a Function component to
 	// implement the Consumer component
-	contextType?: PreactContext;
+	contextType?: AveryContext;
 
 	// Internally, createContext stores a ref to the context object on the Provider
 	// Function component to help devtools
-	_contextRef?: PreactContext;
+	_contextRef?: AveryContext;
 
 	// Define these properties as undefined on FunctionComponent to get rid of
 	// some errors in `diff()`
@@ -77,17 +77,17 @@ export interface FunctionComponent<P = {}> extends preact.FunctionComponent<P> {
 	getDerivedStateFromError?: undefined;
 }
 
-export interface ComponentClass<P = {}> extends preact.ComponentClass<P> {
+export interface ComponentClass<P = {}> extends avery.ComponentClass<P> {
 	_contextRef?: any;
 
-	// Override public contextType with internal PreactContext type
-	contextType?: PreactContext;
+	// Override public contextType with internal AveryContext type
+	contextType?: AveryContext;
 }
 
 // Redefine ComponentType using our new internal FunctionComponent interface above
 export type ComponentType<P = {}> = ComponentClass<P> | FunctionComponent<P>;
 
-export interface PreactElement extends preact.ContainerNode {
+export interface AveryElement extends avery.ContainerNode {
 	// Namespace detection
 	readonly namespaceURI?: string;
 	// Property used to update Text nodes
@@ -109,7 +109,7 @@ export interface PreactElement extends preact.ContainerNode {
 	readonly style?: CSSStyleDeclaration;
 
 	// nextSibling required for inserting nodes
-	readonly nextSibling: PreactElement | null;
+	readonly nextSibling: AveryElement | null;
 
 	// Used to match DOM nodes to VNodes during hydration. Note: doesn't exist
 	// on Text nodes
@@ -125,7 +125,7 @@ export interface PreactElement extends preact.ContainerNode {
 	_listeners?: Record<string, (e: Event) => void>;
 }
 
-export interface PreactEvent extends Event {
+export interface AveryEvent extends Event {
 	_dispatched?: number;
 }
 
@@ -138,7 +138,7 @@ type RefCallback<T> = {
 };
 export type Ref<T> = RefObject<T> | RefCallback<T>;
 
-export interface VNode<P = {}> extends preact.VNode<P> {
+export interface VNode<P = {}> extends avery.VNode<P> {
 	type: string | ComponentType<P>;
 	props: P & { children: ComponentChildren };
 	ref?: Ref<any> | null;
@@ -148,7 +148,7 @@ export interface VNode<P = {}> extends preact.VNode<P> {
 	/**
 	 * The [first (for Fragments)] DOM child of a VNode
 	 */
-	_dom: PreactElement | null;
+	_dom: AveryElement | null;
 	_component: Component | null;
 	constructor: undefined;
 	_original: number;
@@ -157,12 +157,12 @@ export interface VNode<P = {}> extends preact.VNode<P> {
 }
 
 export interface Component<P = {}, S = {}>
-	extends Omit<preact.Component<P, S>, 'base'> {
+	extends Omit<avery.Component<P, S>, 'base'> {
 	// When component is functional component, this is reset to functional component
 	constructor: ComponentType<P>;
 	state: S; // Override Component["state"] to not be readonly for internal use, specifically Hooks
 
-	_excess?: PreactElement[];
+	_excess?: AveryElement[];
 	_dirty: boolean;
 	_force?: boolean;
 	_renderCallbacks: Array<() => void>; // Only class components
@@ -176,14 +176,14 @@ export interface Component<P = {}, S = {}>
 	 * Pointer to the parent dom node. This is only needed for top-level Fragment
 	 * components or array returns.
 	 */
-	_parentDom?: PreactElement | null;
+	_parentDom?: AveryElement | null;
 	// Always read, set only when handling error
 	_processingException?: Component<any, any> | null;
 	// Always read, set only when handling error. This is used to indicate at diffTime to set _processingException
 	_pendingError?: Component<any, any> | null;
 }
 
-export interface PreactContext extends preact.Context<any> {
+export interface AveryContext extends avery.Context<any> {
 	_id: string;
 	_defaultValue: any;
 }

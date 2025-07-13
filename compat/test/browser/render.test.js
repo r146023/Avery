@@ -4,8 +4,8 @@ import React, {
 	Component,
 	hydrate,
 	createContext
-} from 'preact/compat';
-import { setupRerender, act } from 'preact/test-utils';
+} from 'avery/compat';
+import { setupRerender, act } from 'avery/test-utils';
 import {
 	setupScratch,
 	teardown,
@@ -263,7 +263,7 @@ describe('compat render', () => {
 	});
 
 	it('should keep value of uncontrolled inputs using defaultValue', () => {
-		// See https://github.com/preactjs/preact/issues/2391
+		// See https://github.com/averyjs/avery/issues/2391
 
 		const spy = vi.fn();
 
@@ -338,14 +338,14 @@ describe('compat render', () => {
 			<link
 				rel="preload"
 				as="image"
-				href="preact.jpg"
-				imageSrcSet="preact_400px.jpg 400w"
+				href="avery.jpg"
+				imageSrcSet="avery_400px.jpg 400w"
 			/>,
 			scratch
 		);
 
 		expect(sortAttributes(scratch.innerHTML)).to.equal(
-			'<link as="image" href="preact.jpg" imagesrcset="preact_400px.jpg 400w" rel="preload">'
+			'<link as="image" href="avery.jpg" imagesrcset="avery_400px.jpg 400w" rel="preload">'
 		);
 	});
 

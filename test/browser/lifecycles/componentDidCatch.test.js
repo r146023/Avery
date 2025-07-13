@@ -1,5 +1,5 @@
-import { setupRerender } from 'preact/test-utils';
-import { createElement, render, Component, Fragment } from 'preact';
+import { setupRerender } from 'avery/test-utils';
+import { createElement, render, Component, Fragment } from 'avery';
 import { setupScratch, teardown } from '../../_util/helpers';
 import { vi } from 'vitest';
 
@@ -108,7 +108,7 @@ describe('Lifecycle methods', () => {
 			);
 		});
 
-		// https://github.com/preactjs/preact/issues/1570
+		// https://github.com/averyjs/avery/issues/1570
 		it('should handle double child throws', () => {
 			const Child = ({ i }) => {
 				throw new Error(`error! ${i}`);

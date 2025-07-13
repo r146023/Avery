@@ -1,4 +1,4 @@
-import { createContext } from 'preact';
+import { createContext } from 'avery';
 import React, {
 	createElement,
 	useDeferredValue,
@@ -8,8 +8,8 @@ import React, {
 	useState,
 	useContext,
 	useEffect
-} from 'preact/compat';
-import { setupRerender, act } from 'preact/test-utils';
+} from 'avery/compat';
+import { setupRerender, act } from 'avery/test-utils';
 import { setupScratch, teardown } from '../../../test/_util/helpers';
 import { vi } from 'vitest';
 

@@ -1,7 +1,7 @@
-import { createElement, render, Component } from 'preact';
-import { act } from 'preact/test-utils';
+import { createElement, render, Component } from 'avery';
+import { act } from 'avery/test-utils';
 import { setupScratch, teardown } from '../../../test/_util/helpers';
-import { useEffect } from 'preact/hooks';
+import { useEffect } from 'avery/hooks';
 
 /** @jsx createElement */
 

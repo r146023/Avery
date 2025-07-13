@@ -1,13 +1,13 @@
-import { createElement, render } from 'preact';
+import { createElement, render } from 'avery';
 import {
 	setupScratch,
 	teardown,
 	serializeHtml
 } from '../../../test/_util/helpers';
 import './fakeDevTools';
-import { resetPropWarnings } from 'preact/debug';
+import { resetPropWarnings } from 'avery/debug';
 import * as PropTypes from 'prop-types';
-import { jsxDEV as jsxDev } from 'preact/jsx-runtime';
+import { jsxDEV as jsxDev } from 'avery/jsx-runtime';
 import { vi } from 'vitest';
 
 describe('PropTypes', () => {

@@ -1,3 +1,3 @@
-require('preact/compat');
+require('avery/compat');
 
-module.exports = require('preact/jsx-runtime');
+module.exports = require('avery/jsx-runtime');

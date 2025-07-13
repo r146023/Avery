@@ -1,4 +1,4 @@
-import React, { createElement, findDOMNode } from 'preact/compat';
+import React, { createElement, findDOMNode } from 'avery/compat';
 import { setupScratch, teardown } from '../../../test/_util/helpers';
 
 describe('findDOMNode()', () => {
@@ -36,14 +36,14 @@ describe('findDOMNode()', () => {
 	});
 
 	// NOTE: React.render() returning false or null has the component pointing
-	// 			to no DOM Node, in contrast, Preact always render an empty Text DOM Node.
+	// 			to no DOM Node, in contrast, Avery always render an empty Text DOM Node.
 	it('should return null if render returns false', () => {
 		const helper = React.render(<Helper something={false} />, scratch);
 		expect(findDOMNode(helper)).to.be.null;
 	});
 
 	// NOTE: React.render() returning false or null has the component pointing
-	// 			to no DOM Node, in contrast, Preact always render an empty Text DOM Node.
+	// 			to no DOM Node, in contrast, Avery always render an empty Text DOM Node.
 	it('should return null if render returns null', () => {
 		const helper = React.render(<Helper something={null} />, scratch);
 		expect(findDOMNode(helper)).to.be.null;

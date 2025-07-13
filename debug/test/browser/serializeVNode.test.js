@@ -1,4 +1,4 @@
-import { createElement, Component } from 'preact';
+import { createElement, Component } from 'avery';
 import { serializeVNode } from '../../src/debug';
 
 /** @jsx createElement */

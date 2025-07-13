@@ -1,6 +1,6 @@
-import React, { render, Component } from 'preact/compat';
+import React, { render, Component } from 'avery/compat';
 import { setupScratch, teardown } from '../../../test/_util/helpers';
-import { act } from 'preact/test-utils';
+import { act } from 'avery/test-utils';
 
 describe('componentDidCatch', () => {
 	let scratch;

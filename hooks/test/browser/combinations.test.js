@@ -1,5 +1,5 @@
-import { setupRerender, act } from 'preact/test-utils';
-import { createElement, render, Component, createContext } from 'preact';
+import { setupRerender, act } from 'avery/test-utils';
+import { createElement, render, Component, createContext } from 'avery';
 import { setupScratch, teardown } from '../../../test/_util/helpers';
 import {
 	useState,
@@ -9,7 +9,7 @@ import {
 	useRef,
 	useMemo,
 	useContext
-} from 'preact/hooks';
+} from 'avery/hooks';
 import { scheduleEffectAssert } from '../_util/useEffectUtil';
 import { vi } from 'vitest';
 

@@ -1,5 +1,5 @@
-import { setupRerender } from 'preact/test-utils';
-import { createElement, render, Component, options, Fragment } from 'preact';
+import { setupRerender } from 'avery/test-utils';
+import { createElement, render, Component, options, Fragment } from 'avery';
 import {
 	setupScratch,
 	teardown,
@@ -12,7 +12,7 @@ import {
 	createEvent
 } from '../_util/helpers';
 import { clearLog, getLog, logCall } from '../_util/logCall';
-import { useState } from 'preact/hooks';
+import { useState } from 'avery/hooks';
 import { vi } from 'vitest';
 
 /** @jsx createElement */
@@ -466,7 +466,7 @@ describe('render()', () => {
 		expect(scratch.querySelector('td[colspan]')).to.equal(null);
 	});
 
-	// Test for preactjs/preact#651
+	// Test for averyjs/avery#651
 	it('should set enumerable boolean attribute', () => {
 		render(<input spellcheck={false} />, scratch);
 		expect(scratch.firstChild.spellcheck).to.equal(false);
@@ -487,7 +487,7 @@ describe('render()', () => {
 		expect(scratch.innerHTML).to.equal('<div></div>');
 	});
 
-	// Test for preactjs/preact#4340
+	// Test for averyjs/avery#4340
 	it('should respect defaultValue in render', () => {
 		scratch.innerHTML = '<input value="foo">';
 		render(<input defaultValue="foo" />, scratch);
@@ -800,7 +800,7 @@ describe('render()', () => {
 		expect(scratch.firstChild.lastChild).to.equalNode(a);
 	});
 
-	// Discussion: https://github.com/preactjs/preact/issues/287
+	// Discussion: https://github.com/averyjs/avery/issues/287
 	// <datalist> is not supported in Safari, even though the element
 	// constructor is present
 	if (supportsDataList()) {
@@ -834,7 +834,7 @@ describe('render()', () => {
 	});
 
 	it('should not execute append operation when child is at last', () => {
-		// See preactjs/preact#717 for discussion about the issue this addresses
+		// See averyjs/avery#717 for discussion about the issue this addresses
 
 		let todoText = 'new todo that I should complete';
 		let input;
@@ -897,12 +897,12 @@ describe('render()', () => {
 			keyCode: ENTER
 		});
 
-		// Before Preact rerenders, focus should be on the input
+		// Before Avery rerenders, focus should be on the input
 		expect(document.activeElement).to.equalNode(input);
 
 		rerender();
 
-		// After Preact rerenders, focus should remain on the input
+		// After Avery rerenders, focus should remain on the input
 		expect(document.activeElement).to.equalNode(input);
 		expect(scratch.innerHTML).to.contain(`<span>${todoText}</span>`);
 	});
@@ -943,7 +943,7 @@ describe('render()', () => {
 	});
 
 	it('should always diff `checked` and `value` properties against the DOM', () => {
-		// See https://github.com/preactjs/preact/issues/1324
+		// See https://github.com/averyjs/avery/issues/1324
 
 		let inputs;
 		let text;
@@ -981,7 +981,7 @@ describe('render()', () => {
 
 	it('should always diff `contenteditable` `innerHTML` against the DOM', () => {
 		// This tests that we do not cause any cursor jumps in contenteditable fields
-		// See https://github.com/preactjs/preact/issues/2691
+		// See https://github.com/averyjs/avery/issues/2691
 
 		function Editable() {
 			const [value, setValue] = useState('Hello');
@@ -1013,7 +1013,7 @@ describe('render()', () => {
 		// ensure we didn't mess up setting the cursor to position 2
 		expect(window.getSelection().getRangeAt(0).startOffset).to.equal(2);
 
-		// dispatch the input event to tell preact to re-render
+		// dispatch the input event to tell avery to re-render
 		editable.dispatchEvent(createEvent('input'));
 		rerender();
 
@@ -1091,7 +1091,7 @@ describe('render()', () => {
 		expect(scratch.innerHTML).to.equal('<div>foo</div>');
 	});
 
-	// see preact/#1327
+	// see avery/#1327
 	it('should not reuse unkeyed components', () => {
 		let ref;
 		class X extends Component {

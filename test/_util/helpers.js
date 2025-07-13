@@ -1,6 +1,6 @@
-import { createElement, options } from 'preact';
+import { createElement, options } from 'avery';
 import { clearLog, getLog } from './logCall';
-import { teardown as testUtilTeardown } from 'preact/test-utils';
+import { teardown as testUtilTeardown } from 'avery/test-utils';
 import { vi } from 'vitest';
 
 /** @jsx createElement */
@@ -205,7 +205,7 @@ export function clearOptions() {
 }
 
 /**
- * Teardown test environment and reset preact's internal state
+ * Teardown test environment and reset avery's internal state
  * @param {HTMLElement} scratch
  */
 export function teardown(scratch) {

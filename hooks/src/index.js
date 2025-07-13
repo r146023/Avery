@@ -1,4 +1,4 @@
-import { options as _options } from 'preact';
+import { options as _options } from 'avery';
 
 const ObjectIs = Object.is;
 
@@ -369,7 +369,7 @@ export function useCallback(callback, args) {
 }
 
 /**
- * @param {import('./internal').PreactContext} context
+ * @param {import('./internal').AveryContext} context
  */
 export function useContext(context) {
 	const provider = currentComponent.context[context._id];
@@ -404,7 +404,7 @@ export function useDebugValue(value, formatter) {
 }
 
 /**
- * @param {(error: unknown, errorInfo: import('preact').ErrorInfo) => void} cb
+ * @param {(error: unknown, errorInfo: import('avery').ErrorInfo) => void} cb
  * @returns {[unknown, () => void]}
  */
 export function useErrorBoundary(cb) {

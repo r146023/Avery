@@ -14,13 +14,13 @@ import { getDomSibling } from '../component';
 /**
  * @typedef {import('../internal').ComponentChildren} ComponentChildren
  * @typedef {import('../internal').Component} Component
- * @typedef {import('../internal').PreactElement} PreactElement
+ * @typedef {import('../internal').AveryElement} AveryElement
  * @typedef {import('../internal').VNode} VNode
  */
 
 /**
  * Diff the children of a virtual node
- * @param {PreactElement} parentDom The DOM element whose children are being
+ * @param {AveryElement} parentDom The DOM element whose children are being
  * diffed
  * @param {ComponentChildren[]} renderResult
  * @param {VNode} newParentVNode The new virtual node whose children should be
@@ -30,10 +30,10 @@ import { getDomSibling } from '../component';
  * @param {object} globalContext The current context object - modified by
  * getChildContext
  * @param {string} namespace Current namespace of the DOM node (HTML, SVG, or MathML)
- * @param {Array<PreactElement>} excessDomChildren
+ * @param {Array<AveryElement>} excessDomChildren
  * @param {Array<Component>} commitQueue List of components which have callbacks
  * to invoke in commitRoot
- * @param {PreactElement} oldDom The current attached DOM element any new dom
+ * @param {AveryElement} oldDom The current attached DOM element any new dom
  * elements should be placed around. Likely `null` on first render (except when
  * hydrating). Can be a sibling DOM element when diffing Fragments that have
  * siblings. In most cases, it starts out as `oldChildren[0]._dom`.
@@ -58,9 +58,9 @@ export function diffChildren(
 		oldVNode,
 		/** @type {VNode} */
 		childVNode,
-		/** @type {PreactElement} */
+		/** @type {AveryElement} */
 		newDom,
-		/** @type {PreactElement} */
+		/** @type {AveryElement} */
 		firstChildDom;
 
 	// This is a compression of oldParentVNode!=null && oldParentVNode != EMPTY_OBJ && oldParentVNode._children || EMPTY_ARR
@@ -336,9 +336,9 @@ function constructNewChildrenArray(
 
 /**
  * @param {VNode} parentVNode
- * @param {PreactElement} oldDom
- * @param {PreactElement} parentDom
- * @returns {PreactElement}
+ * @param {AveryElement} oldDom
+ * @param {AveryElement} parentDom
+ * @returns {AveryElement}
  */
 function insert(parentVNode, oldDom, parentDom) {
 	// Note: VNodes in nested suspended trees may be missing _children.

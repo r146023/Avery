@@ -1,4 +1,4 @@
-import { options } from 'preact';
+import { options } from 'avery';
 import { initDevTools } from './devtools';
 
 initDevTools();

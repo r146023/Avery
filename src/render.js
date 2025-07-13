@@ -5,12 +5,12 @@ import options from './options';
 import { slice } from './util';
 
 /**
- * Render a Preact virtual node into a DOM element
+ * Render a Avery virtual node into a DOM element
  * @param {import('./internal').ComponentChild} vnode The virtual node to render
- * @param {import('./internal').PreactElement} parentDom The DOM element to render into
+ * @param {import('./internal').AveryElement} parentDom The DOM element to render into
  */
 export function render(vnode, parentDom) {
-	// https://github.com/preactjs/preact/issues/3794
+	// https://github.com/averyjs/avery/issues/3794
 	if (parentDom == document) {
 		parentDom = document.documentElement;
 	}
@@ -56,9 +56,9 @@ export function render(vnode, parentDom) {
 }
 
 /**
- * Update an existing DOM element with data from a Preact virtual node
+ * Update an existing DOM element with data from a Avery virtual node
  * @param {import('./internal').ComponentChild} vnode The virtual node to render
- * @param {import('./internal').PreactElement} parentDom The DOM element to update
+ * @param {import('./internal').AveryElement} parentDom The DOM element to update
  */
 export function hydrate(vnode, parentDom) {
 	// @ts-expect-error

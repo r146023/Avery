@@ -1,4 +1,4 @@
-import { createElement } from 'preact';
+import { createElement } from 'avery';
 import create from 'zustand';
 
 const useStore = create(set => ({

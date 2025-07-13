@@ -17,7 +17,7 @@ on:
           - todo/todo
         required: true
       base:
-        description: 'The branch name, tag, or commit sha of the version of preact to benchmark against.'
+        description: 'The branch name, tag, or commit sha of the version of avery to benchmark against.'
         type: string
         default: main
         required: false
@@ -56,11 +56,11 @@ jobs:
       - build_base
     timeout-minutes: 5
     steps:
-      - name: Download locally built preact package
+      - name: Download locally built avery package
         uses: actions/download-artifact@v4
         with:
           name: npm-package
-      - run: mv preact.tgz preact-local.tgz
+      - run: mv avery.tgz avery-local.tgz
       - name: Clear working directory
         run: |
           ls -al
@@ -71,14 +71,14 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: base-npm-package
-      - run: mv preact.tgz preact-main.tgz
-      - name: Upload locally built & base preact package
+      - run: mv avery.tgz avery-main.tgz
+      - name: Upload locally built & base avery package
         uses: actions/upload-artifact@v4
         with:
           name: bench-environment
           path: |
-            preact-local.tgz
-            preact-main.tgz
+            avery-local.tgz
+            avery-main.tgz
 
   benchmark:
     name: Bench ${{ inputs.benchmark }}

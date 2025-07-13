@@ -1,7 +1,7 @@
-import { createElement, render, Component } from 'preact';
-import { useState, useEffect } from 'preact/hooks';
-import 'preact/debug';
-import { act } from 'preact/test-utils';
+import { createElement, render, Component } from 'avery';
+import { useState, useEffect } from 'avery/hooks';
+import 'avery/debug';
+import { act } from 'avery/test-utils';
 import { setupScratch, teardown } from '../../../test/_util/helpers';
 import { vi } from 'vitest';
 

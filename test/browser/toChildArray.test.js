@@ -1,4 +1,4 @@
-import { createElement, render, toChildArray } from 'preact';
+import { createElement, render, toChildArray } from 'avery';
 import {
 	setupScratch,
 	teardown,

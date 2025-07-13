@@ -7,8 +7,8 @@ import React, {
 	useCallback,
 	useEffect,
 	useLayoutEffect
-} from 'preact/compat';
-import { setupRerender, act } from 'preact/test-utils';
+} from 'avery/compat';
+import { setupRerender, act } from 'avery/test-utils';
 import { setupScratch, teardown } from '../../../test/_util/helpers';
 import { vi } from 'vitest';
 
@@ -263,7 +263,7 @@ describe('useSyncExternalStore', () => {
 
 	it('handles store updates before subscribing', async () => {
 		// This test is testing scheduling mechanics, so teardown the manual
-		// rerender test setup to rely on Preact's built-in scheduling and verify
+		// rerender test setup to rely on Avery's built-in scheduling and verify
 		// this behavior works. We still need a DOM container to render into so set
 		// that back up.
 		teardown(scratch);
@@ -501,7 +501,7 @@ describe('useSyncExternalStore', () => {
 			// Should flip back to 0
 			expect(container.textContent).to.equal('0');
 
-			// Preact: Wait for 'Passive effect: 0' to flush from the rAF so it doesn't impact other tests
+			// Avery: Wait for 'Passive effect: 0' to flush from the rAF so it doesn't impact other tests
 			await new Promise(r => setTimeout(r, 32));
 		});
 
@@ -659,7 +659,7 @@ describe('useSyncExternalStore', () => {
 			await act(() => {
 				store.set(1);
 			});
-			// Preact logs differ from React here cuz of how we do rerendering. We
+			// Avery logs differ from React here cuz of how we do rerendering. We
 			// rerender subtrees and then commit effects so Child2 never sees the
 			// update to 1 cuz Child1 rerenders and runs its layout effects first.
 			assertLog([1, /*1,*/ 'Reset back to 0', 0, 0]);

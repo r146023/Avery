@@ -1,4 +1,4 @@
-import { createElement, Component } from 'preact';
+import { createElement, Component } from 'avery';
 
 function createItems(count = 10) {
 	let items = [];

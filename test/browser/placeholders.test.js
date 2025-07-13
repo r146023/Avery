@@ -1,5 +1,5 @@
-import { createElement, Component, render, createRef, Fragment } from 'preact';
-import { setupRerender } from 'preact/test-utils';
+import { createElement, Component, render, createRef, Fragment } from 'avery';
+import { setupRerender } from 'avery/test-utils';
 import { setupScratch, teardown } from '../_util/helpers';
 import { logCall, clearLog, getLog } from '../_util/logCall';
 import { div } from '../_util/dom';
@@ -25,7 +25,7 @@ describe('null placeholders', () => {
 
 	/**
 	 * @param {string} name
-	 * @returns {[import('preact').ComponentClass, import('preact').RefObject<{ toggle(): void }>]}
+	 * @returns {[import('avery').ComponentClass, import('avery').RefObject<{ toggle(): void }>]}
 	 */
 	function createStatefulNullable(name) {
 		let ref = createRef();
@@ -261,7 +261,7 @@ describe('null placeholders', () => {
 		]);
 	});
 
-	// See preactjs/preact#2350
+	// See averyjs/avery#2350
 	it('should efficiently replace null placeholders in parent rerenders (#2350)', () => {
 		// This Nullable only changes when it's parent rerenders
 		const Nullable1 = createNullable('Nullable 1');

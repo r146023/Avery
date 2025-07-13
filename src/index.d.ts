@@ -1,11 +1,11 @@
-export as namespace preact;
+export as namespace avery;
 
 import { JSXInternal } from './jsx';
 
 export import JSX = JSXInternal;
 
 //
-// Preact Virtual DOM
+// Avery Virtual DOM
 // -----------------------------------
 
 export interface VNode<P = {}> {
@@ -32,7 +32,7 @@ export interface VNode<P = {}> {
 }
 
 //
-// Preact Component interface
+// Avery Component interface
 // -----------------------------------
 
 export type Key = string | number | any;
@@ -61,7 +61,7 @@ export interface ClassAttributes<T> extends Attributes {
 	ref?: Ref<T>;
 }
 
-export interface PreactDOMAttributes {
+export interface AveryDOMAttributes {
 	children?: ComponentChildren;
 	dangerouslySetInnerHTML?: {
 		__html: string;
@@ -180,7 +180,7 @@ export abstract class Component<P, S> {
 }
 
 //
-// Preact createElement
+// Avery createElement
 // -----------------------------------
 
 export function createElement(
@@ -281,7 +281,7 @@ export namespace h {
 }
 
 //
-// Preact render
+// Avery render
 // -----------------------------------
 interface ContainerNode {
 	readonly nodeType: number;
@@ -308,18 +308,18 @@ export function cloneElement<P>(
 ): VNode<P>;
 
 //
-// Preact Built-in Components
+// Avery Built-in Components
 // -----------------------------------
 
 // TODO: Revisit what the public type of this is...
 export const Fragment: FunctionComponent<{}>;
 
 //
-// Preact options
+// Avery options
 // -----------------------------------
 
 /**
- * Global options for preact
+ * Global options for avery
  */
 export interface Options {
 	/** Attach a hook that is invoked whenever a VNode is created. */
@@ -346,7 +346,7 @@ export interface Options {
 export const options: Options;
 
 //
-// Preact helpers
+// Avery helpers
 // -----------------------------------
 export function createRef<T = any>(): RefObject<T>;
 export function toChildArray(
@@ -361,24 +361,24 @@ export interface Consumer<T>
 	extends FunctionComponent<{
 		children: (value: T) => ComponentChildren;
 	}> {}
-export interface PreactConsumer<T> extends Consumer<T> {}
+export interface AveryConsumer<T> extends Consumer<T> {}
 
 export interface Provider<T>
 	extends FunctionComponent<{
 		value: T;
 		children?: ComponentChildren;
 	}> {}
-export interface PreactProvider<T> extends Provider<T> {}
+export interface AveryProvider<T> extends Provider<T> {}
 export type ContextType<C extends Context<any>> = C extends Context<infer T>
 	? T
 	: never;
 
-export interface Context<T> extends preact.Provider<T> {
-	Consumer: preact.Consumer<T>;
-	Provider: preact.Provider<T>;
+export interface Context<T> extends avery.Provider<T> {
+	Consumer: avery.Consumer<T>;
+	Provider: avery.Provider<T>;
 	displayName?: string;
 }
 
-export interface PreactContext<T> extends Context<T> {}
+export interface AveryContext<T> extends Context<T> {}
 
 export function createContext<T>(defaultValue: T): Context<T>;

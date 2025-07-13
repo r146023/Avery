@@ -1,7 +1,7 @@
-import { createElement, render, options } from 'preact';
+import { createElement, render, options } from 'avery';
 import { setupScratch, teardown } from '../../../test/_util/helpers';
-import { useState } from 'preact/hooks';
-import { addHookName } from 'preact/devtools';
+import { useState } from 'avery/hooks';
+import { addHookName } from 'avery/devtools';
 import { vi } from 'vitest';
 
 /** @jsx createElement */

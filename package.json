@@ -3,7 +3,7 @@
   "amdName": "avery",
   "version": "0.0.1",
   "private": false,
-  "description": "Avery is a modern, lightweight UI framework based on a fork of Preact, featuring seamless integration with the OmniTurbo state engine for fast, scalable, and intuitive global state management. Designed for high-performance web apps with minimal boilerplate.",
+  "description": "Avery is a modern, lightweight UI framework based on a fork of Avery, featuring seamless integration with the OmniTurbo state engine for fast, scalable, and intuitive global state management. Designed for high-performance web apps with minimal boilerplate.",
   "main": "dist/avery.js",
   "module": "dist/avery.mjs",
   "umd:main": "dist/avery.umd.js",
@@ -112,7 +112,7 @@
   "types": "src/index.d.ts",
   "scripts": {
     "prepare": "husky && npm run test:install && run-s build",
-    "build": "npm-run-all --parallel 'build:*'",
+    "build": "npm-run-all --parallel build:*",
     "build:core": "microbundle build --raw --no-generateTypes -f cjs,esm,umd",
     "build:debug": "microbundle build --raw --no-generateTypes -f cjs,esm,umd --cwd debug",
     "build:devtools": "microbundle build --raw --no-generateTypes -f cjs,esm,umd --cwd devtools",

@@ -155,7 +155,7 @@
 	function diff(dom, vnode, context, mountAll, parent, componentRoot) {
 		if (!diffLevel++) {
 			isSvgMode = null != parent && void 0 !== parent.ownerSVGElement;
-			hydrating = null != dom && !('__preactattr_' in dom);
+			hydrating = null != dom && !('__averyattr_' in dom);
 		}
 		var ret = idiff(dom, vnode, context, mountAll, componentRoot);
 		if (parent && ret.parentNode !== parent) parent.appendChild(ret);
@@ -184,7 +184,7 @@
 					recollectNodeTree(dom, !0);
 				}
 			}
-			out.__preactattr_ = !0;
+			out.__averyattr_ = !0;
 			return out;
 		}
 		var vnodeName = vnode.nodeName;
@@ -202,10 +202,10 @@
 			}
 		}
 		var fc = out.firstChild,
-			props = out.__preactattr_,
+			props = out.__averyattr_,
 			vchildren = vnode.children;
 		if (null == props) {
-			props = out.__preactattr_ = {};
+			props = out.__averyattr_ = {};
 			for (var a = out.attributes, i = a.length; i--; )
 				props[a[i].name] = a[i].value;
 		}
@@ -248,7 +248,7 @@
 		if (0 !== len)
 			for (var i = 0; i < len; i++) {
 				var _child = originalChildren[i],
-					props = _child.__preactattr_,
+					props = _child.__averyattr_,
 					key =
 						vlen && props
 							? _child._component
@@ -309,8 +309,8 @@
 		var component = node._component;
 		if (component) unmountComponent(component);
 		else {
-			if (null != node.__preactattr_) applyRef(node.__preactattr_.ref, null);
-			if (!1 === unmountOnly || null == node.__preactattr_) removeNode(node);
+			if (null != node.__averyattr_) applyRef(node.__averyattr_.ref, null);
+			if (!1 === unmountOnly || null == node.__averyattr_) removeNode(node);
 			removeChildren(node);
 		}
 	}
@@ -557,8 +557,8 @@
 		var inner = component._component;
 		if (inner) unmountComponent(inner);
 		else if (base) {
-			if (base.__preactattr_ && base.__preactattr_.ref)
-				base.__preactattr_.ref(null);
+			if (base.__averyattr_ && base.__averyattr_.ref)
+				base.__averyattr_.ref(null);
 			component.__b = base;
 			removeNode(base);
 			recyclerComponents.push(component);
@@ -611,7 +611,7 @@
 		},
 		render: function () {}
 	});
-	var preact = {
+	var avery = {
 		h: h,
 		createElement: h,
 		cloneElement: cloneElement,
@@ -621,7 +621,7 @@
 		rerender: rerender,
 		options: options
 	};
-	if ('undefined' != typeof module) module.exports = preact;
-	else self.preact = preact;
+	if ('undefined' != typeof module) module.exports = avery;
+	else self.avery = avery;
 })();
-//# sourceMappingURL=preact.js.map
+//# sourceMappingURL=avery.js.map

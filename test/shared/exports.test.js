@@ -14,7 +14,7 @@ import {
 } from '../../src/index';
 import { expect } from 'chai';
 
-describe('preact', () => {
+describe('avery', () => {
 	it('should be available as named exports', () => {
 		expect(h).to.be.a('function');
 		expect(createElement).to.be.a('function');

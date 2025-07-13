@@ -1,5 +1,5 @@
-import { createElement as preactCreateElement, Fragment } from 'preact';
-import React, { isFragment } from 'preact/compat';
+import { createElement as averyCreateElement, Fragment } from 'avery';
+import React, { isFragment } from 'avery/compat';
 
 describe('isFragment', () => {
 	it('should check return false for invalid arguments', () => {
@@ -12,8 +12,8 @@ describe('isFragment', () => {
 		expect(isFragment({})).to.equal(false);
 	});
 
-	it('should detect a preact vnode', () => {
-		expect(isFragment(preactCreateElement(Fragment, {}))).to.equal(true);
+	it('should detect a avery vnode', () => {
+		expect(isFragment(averyCreateElement(Fragment, {}))).to.equal(true);
 	});
 
 	it('should detect a compat vnode', () => {

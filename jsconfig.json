@@ -2,17 +2,16 @@
   "compilerOptions": {
     "baseUrl": ".",
     "checkJs": true,
-    "jsx": "react",
-    "jsxFactory": "createElement",
-    "jsxFragmentFactory": "Fragment",
-    "lib": ["dom", "es5"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "avery",
+    "lib": ["dom", "esnext"],
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "paths": {
-      "preact": ["."],
-      "preact/*": ["./*"]
+      "avery": ["src"],
+      "avery/*": ["src/*"]
     },
-    "target": "es5",
+    "target": "esnext",
     "noEmit": true,
     "skipLibCheck": false
   },

@@ -1,6 +1,6 @@
 // Intentionally not using a relative path to take advantage of
 // the TS version resolution mechanism
-import { ErrorInfo, PreactContext, Ref, RefObject } from 'preact';
+import { ErrorInfo, AveryContext, Ref, RefObject } from 'avery';
 
 type Inputs = ReadonlyArray<unknown>;
 
@@ -121,7 +121,7 @@ export function useMemo<T>(factory: () => T, inputs: Inputs | undefined): T;
  *
  * @param context The context you want to use
  */
-export function useContext<T>(context: PreactContext<T>): T;
+export function useContext<T>(context: AveryContext<T>): T;
 
 /**
  * Customize the displayed value in the devtools panel.

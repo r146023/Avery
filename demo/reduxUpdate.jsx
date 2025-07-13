@@ -1,4 +1,4 @@
-import { createElement, Component } from 'preact';
+import { createElement, Component } from 'avery';
 import { connect, Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { HashRouter, Route, Link } from 'react-router-dom';

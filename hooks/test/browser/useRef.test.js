@@ -1,6 +1,6 @@
-import { createElement, render } from 'preact';
+import { createElement, render } from 'avery';
 import { setupScratch, teardown } from '../../../test/_util/helpers';
-import { useRef } from 'preact/hooks';
+import { useRef } from 'avery/hooks';
 
 /** @jsx createElement */
 

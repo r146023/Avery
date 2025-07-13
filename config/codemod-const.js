@@ -1,7 +1,7 @@
 /* eslint no-console:0 */
 
 /** Find constants (identified by ALL_CAPS_DECLARATIONS), and inline them globally.
- *	This is safe because Preact *only* uses global constants.
+ *	This is safe because Avery *only* uses global constants.
  */
 export default (file, api) => {
 	let j = api.jscodeshift,

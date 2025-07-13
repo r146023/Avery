@@ -8,8 +8,8 @@
     "module": "es2015",
     "moduleResolution": "node",
     "paths": {
-      "preact/hooks": ["../hooks/src/index.js"],
-      "preact": ["../src/index.js"]
+      "avery/hooks": ["../hooks/src/index.js"],
+      "avery": ["../src/index.js"]
     }
   }
 }

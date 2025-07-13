@@ -13,7 +13,7 @@ jobs:
           node-version-file: 'package.json'
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
-      - uses: preactjs/compressed-size-action@v2
+      - uses: averyjs/compressed-size-action@v2
         with:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
           # Our `prepare` script already builds the app post-install,

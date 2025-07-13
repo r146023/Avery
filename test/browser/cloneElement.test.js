@@ -1,4 +1,4 @@
-import { createElement, cloneElement, createRef } from 'preact';
+import { createElement, cloneElement, createRef } from 'avery';
 
 /** @jsx createElement */
 

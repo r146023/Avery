@@ -4,8 +4,8 @@ import React, {
 	render,
 	Component,
 	createRef
-} from 'preact/compat';
-import { setupRerender } from 'preact/test-utils';
+} from 'avery/compat';
+import { setupRerender } from 'avery/test-utils';
 import {
 	setupScratch,
 	teardown,

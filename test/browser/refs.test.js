@@ -1,5 +1,5 @@
-import { setupRerender } from 'preact/test-utils';
-import { createElement, render, Component, createRef, Fragment } from 'preact';
+import { setupRerender } from 'avery/test-utils';
+import { createElement, render, Component, createRef, Fragment } from 'avery';
 import { setupScratch, teardown } from '../_util/helpers';
 import { vi } from 'vitest';
 
@@ -439,7 +439,7 @@ describe('refs', () => {
 	});
 
 	it('should bind refs before componentDidMount', () => {
-		/** @type {import('preact').RefObject<HTMLSpanElement>[]} */
+		/** @type {import('avery').RefObject<HTMLSpanElement>[]} */
 		const refs = [];
 
 		class Parent extends Component {

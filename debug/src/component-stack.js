@@ -1,4 +1,4 @@
-import { options, Fragment } from 'preact';
+import { options, Fragment } from 'avery';
 
 /**
  * Get human readable name of the component/dom node

@@ -1,1 +1,1 @@
-export * from 'preact/test-utils';
+export * from 'avery/test-utils';

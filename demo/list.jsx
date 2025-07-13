@@ -1,4 +1,4 @@
-import { h, render } from 'preact';
+import { h, render } from 'avery';
 import htm from 'htm';
 import './style.css';
 

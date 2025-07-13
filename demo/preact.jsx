@@ -4,7 +4,7 @@ import {
 	cloneElement,
 	Component as CevicheComponent,
 	render
-} from 'preact';
+} from 'avery';
 
 options.vnode = vnode => {
 	vnode.nodeName = vnode.type;

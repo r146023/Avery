@@ -1,8 +1,8 @@
 {
-  "name": "preact-compat",
-  "amdName": "preactCompat",
+  "name": "avery-compat",
+  "amdName": "averyCompat",
   "private": true,
-  "description": "A React compatibility layer for Preact",
+  "description": "A React compatibility layer for Avery",
   "main": "dist/compat.js",
   "module": "dist/compat.mjs",
   "umd:main": "dist/compat.umd.js",
@@ -13,6 +13,6 @@
     "regex": "^_"
   },
   "peerDependencies": {
-    "preact": "^10.0.0"
+    "avery": "^10.0.0"
   }
 }

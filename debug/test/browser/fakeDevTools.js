@@ -1,1 +1,1 @@
-window.__PREACT_DEVTOOLS__ = { attachPreact: vi.fn() };
+window.__AVERY_DEVTOOLS__ = { attachAvery: vi.fn() };

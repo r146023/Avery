@@ -1,5 +1,5 @@
-import { createElement, Component, render, createRef } from 'preact';
-import { setupRerender } from 'preact/test-utils';
+import { createElement, Component, render, createRef } from 'avery';
+import { setupRerender } from 'avery/test-utils';
 import { setupScratch, teardown } from '../_util/helpers';
 import { logCall, clearLog, getLog } from '../_util/logCall';
 import { div } from '../_util/dom';
@@ -135,7 +135,7 @@ describe('keys', () => {
 		);
 	});
 
-	// See preactjs/preact-compat#21
+	// See averyjs/avery-compat#21
 	it('should remove orphaned keyed nodes', () => {
 		render(
 			<div>
@@ -406,7 +406,7 @@ describe('keys', () => {
 	});
 
 	it('should move keyed children to the beginning on longer list', () => {
-		// Preact v10 worst case
+		// Avery v10 worst case
 		const values = ['a', 'b', 'c', 'd', 'e', 'f'];
 
 		render(<List values={values} />, scratch);
@@ -528,7 +528,7 @@ describe('keys', () => {
 	});
 
 	it('should not preserve state between an unkeyed and keyed component', () => {
-		// React and Preact v8 behavior: https://codesandbox.io/s/57prmy5mx
+		// React and Avery v8 behavior: https://codesandbox.io/s/57prmy5mx
 
 		const Stateful = createStateful('Stateful');
 
@@ -559,7 +559,7 @@ describe('keys', () => {
 	});
 
 	it('should not preserve state when keys change with multiple children', () => {
-		// React & Preact v8 behavior: https://codesandbox.io/s/8l3p6lz9kj
+		// React & Avery v8 behavior: https://codesandbox.io/s/8l3p6lz9kj
 
 		const Stateful1 = createStateful('Stateful1');
 		const Stateful2 = createStateful('Stateful2');
@@ -630,7 +630,7 @@ describe('keys', () => {
 	});
 
 	it('should preserve state when moving keyed children components', () => {
-		// React & Preact v8 behavior: https://codesandbox.io/s/8l3p6lz9kj
+		// React & Avery v8 behavior: https://codesandbox.io/s/8l3p6lz9kj
 
 		const Stateful1 = createStateful('Stateful1');
 		const Stateful2 = createStateful('Stateful2');
@@ -832,7 +832,7 @@ describe('keys', () => {
 	});
 
 	it('should not preserve state when switching between keyed and unkeyed components as children', () => {
-		// React & Preact v8 behavior: https://codesandbox.io/s/8l3p6lz9kj
+		// React & Avery v8 behavior: https://codesandbox.io/s/8l3p6lz9kj
 
 		const Stateful1 = createStateful('Stateful1');
 		const Stateful2 = createStateful('Stateful2');

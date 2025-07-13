@@ -1,8 +1,8 @@
 {
-  "name": "preact-debug",
-  "amdName": "preactDebug",
+  "name": "avery-debug",
+  "amdName": "averyDebug",
   "private": true,
-  "description": "Preact extensions for development",
+  "description": "Avery extensions for development",
   "main": "dist/debug.js",
   "module": "dist/debug.mjs",
   "umd:main": "dist/debug.umd.js",
@@ -13,6 +13,6 @@
     "regex": "^(?!_renderer)^_"
   },
   "peerDependencies": {
-    "preact": "^10.0.0"
+    "avery": "^10.0.0"
   }
 }

@@ -1,11 +1,11 @@
-import { toChildArray } from 'preact';
+import { toChildArray } from 'avery';
 
 const mapFn = (children, fn) => {
 	if (children == null) return null;
 	return toChildArray(toChildArray(children).map(fn));
 };
 
-// This API is completely unnecessary for Preact, so it's basically passthrough.
+// This API is completely unnecessary for Avery, so it's basically passthrough.
 export const Children = {
 	map: mapFn,
 	forEach: mapFn,

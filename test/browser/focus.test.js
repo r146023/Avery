@@ -1,5 +1,5 @@
-import { setupRerender } from 'preact/test-utils';
-import { createElement, render, Component, Fragment, hydrate } from 'preact';
+import { setupRerender } from 'avery/test-utils';
+import { createElement, render, Component, Fragment, hydrate } from 'avery';
 import { setupScratch, teardown } from '../_util/helpers';
 import { div, span, input as inputStr, h1, h2 } from '../_util/dom';
 
@@ -245,7 +245,7 @@ describe('focus', () => {
 	});
 
 	it('should maintain focus when adding children around input (unkeyed)', () => {
-		// Related preactjs/preact#2446
+		// Related averyjs/avery#2446
 
 		render(<DynamicList unkeyed />, scratch);
 

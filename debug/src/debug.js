@@ -1,5 +1,5 @@
 import { checkPropTypes } from './check-props';
-import { options, Component } from 'preact';
+import { options, Component } from 'avery';
 import {
 	ELEMENT_NODE,
 	DOCUMENT_NODE,
@@ -179,7 +179,7 @@ export function initDebug() {
 			vnode.ref !== undefined &&
 			typeof vnode.ref != 'function' &&
 			typeof vnode.ref != 'object' &&
-			!('$$typeof' in vnode) // allow string refs when preact-compat is installed
+			!('$$typeof' in vnode) // allow string refs when avery-compat is installed
 		) {
 			throw new Error(
 				`Component's "ref" property should be a function, or an object created ` +
@@ -361,10 +361,10 @@ export function initDebug() {
 				type === 'a' ||
 				type === 'button')
 		) {
-			// Avoid false positives when Preact only partially rendered the
+			// Avoid false positives when Avery only partially rendered the
 			// HTML tree. Whilst we attempt to include the outer DOM in our
 			// validation, this wouldn't work on the server for
-			// `preact-render-to-string`. There we'd otherwise flood the terminal
+			// `avery-render-to-string`. There we'd otherwise flood the terminal
 			// with false positives, which we'd like to avoid.
 			let domParentName = getClosestDomNodeParentName(parent);
 			if (domParentName !== '' && isTableElement(type)) {

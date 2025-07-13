@@ -1,6 +1,6 @@
 import { createElement, Component } from '../../';
 
-// declare global JSX types that should not be mixed with preact's internal types
+// declare global JSX types that should not be mixed with avery's internal types
 declare global {
 	namespace JSX {
 		interface Element {

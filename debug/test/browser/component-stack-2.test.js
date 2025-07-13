@@ -1,5 +1,5 @@
-import { createElement, render, Component } from 'preact';
-import 'preact/debug';
+import { createElement, render, Component } from 'avery';
+import 'avery/debug';
 import { setupScratch, teardown } from '../../../test/_util/helpers';
 import { vi } from 'vitest';
 

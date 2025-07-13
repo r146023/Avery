@@ -1,4 +1,4 @@
-import { Component } from 'preact';
+import { Component } from 'avery';
 
 export default class FragmentComp extends Component {
 	state = { number: 0 };

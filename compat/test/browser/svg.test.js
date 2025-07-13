@@ -1,4 +1,4 @@
-import React, { createElement } from 'preact/compat';
+import React, { createElement } from 'avery/compat';
 import {
 	setupScratch,
 	teardown,

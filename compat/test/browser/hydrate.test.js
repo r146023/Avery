@@ -1,4 +1,4 @@
-import React, { hydrate } from 'preact/compat';
+import React, { hydrate } from 'avery/compat';
 import { setupScratch, teardown } from '../../../test/_util/helpers';
 import { vi } from 'vitest';
 

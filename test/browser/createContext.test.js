@@ -1,11 +1,11 @@
-import { setupRerender, act } from 'preact/test-utils';
+import { setupRerender, act } from 'avery/test-utils';
 import {
 	createElement,
 	render,
 	Component,
 	createContext,
 	Fragment
-} from 'preact';
+} from 'avery';
 import { setupScratch, teardown } from '../_util/helpers';
 import { vi } from 'vitest';
 

@@ -10,7 +10,7 @@
     "noEmit": true,
     "allowSyntheticDefaultImports": true,
     "paths": {
-      "preact": ["../../../src/index.d.ts"]
+      "avery": ["../../../src/index.d.ts"]
     }
   },
   "include": ["./**/*.ts", "./**/*.tsx"]

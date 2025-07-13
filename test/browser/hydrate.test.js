@@ -1,5 +1,5 @@
-import { createElement, hydrate, Fragment, Component } from 'preact';
-import { setupRerender } from 'preact/test-utils';
+import { createElement, hydrate, Fragment, Component } from 'avery';
+import { setupRerender } from 'avery/test-utils';
 import {
 	setupScratch,
 	teardown,
@@ -64,7 +64,7 @@ describe('hydrate()', () => {
 		teardown(scratch);
 	});
 
-	// Test for preactjs/preact#4340
+	// Test for averyjs/avery#4340
 	it('should respect defaultValue in hydrate', () => {
 		scratch.innerHTML = '<input value="foo">';
 		hydrate(<input defaultValue="foo" />, scratch);
@@ -362,13 +362,13 @@ describe('hydrate()', () => {
 		const DOMElement = html`<div><a foo="bar"></a></div>`;
 		scratch.appendChild(DOMElement);
 
-		const preactElement = (
+		const averyElement = (
 			<div>
 				<a />
 			</div>
 		);
 
-		hydrate(preactElement, scratch);
+		hydrate(averyElement, scratch);
 		expect(attributesSpy).not.toHaveBeenCalled();
 		expect(scratch).to.have.property(
 			'innerHTML',

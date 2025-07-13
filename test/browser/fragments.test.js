@@ -1,11 +1,11 @@
-import { setupRerender } from 'preact/test-utils';
+import { setupRerender } from 'avery/test-utils';
 import {
 	createElement,
 	render,
 	Component,
 	Fragment,
 	createContext
-} from 'preact';
+} from 'avery';
 import { setupScratch, teardown } from '../_util/helpers';
 import { span, div, ul, ol, li, section } from '../_util/dom';
 import { logCall, clearLog, getLog } from '../_util/logCall';
@@ -641,7 +641,7 @@ describe('Fragment', () => {
 			);
 		}
 
-		// React & Preact: has the same behavior for components
+		// React & Avery: has the same behavior for components
 		// https://codesandbox.io/s/57prmy5mx
 		render(<Foo condition={true} />, scratch);
 		render(<Foo condition={false} />, scratch);

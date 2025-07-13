@@ -1,5 +1,5 @@
-import { setupRerender } from 'preact/test-utils';
-import { createElement, render, Component } from 'preact';
+import { setupRerender } from 'avery/test-utils';
+import { createElement, render, Component } from 'avery';
 import { setupScratch, teardown } from '../../_util/helpers';
 import { vi } from 'vitest';
 
@@ -382,7 +382,7 @@ describe('Lifecycle methods', () => {
 	});
 
 	describe('#setState', () => {
-		// From preactjs/preact#1170
+		// From averyjs/avery#1170
 		it('should NOT mutate state, only create new versions', () => {
 			const stateConstant = {};
 			let didMount = false;

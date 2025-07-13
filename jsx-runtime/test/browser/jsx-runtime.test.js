@@ -1,4 +1,4 @@
-import { Component, createElement, createRef, options } from 'preact';
+import { Component, createElement, createRef, options } from 'avery';
 import {
 	jsx,
 	jsxs,
@@ -7,7 +7,7 @@ import {
 	jsxAttr,
 	jsxTemplate,
 	jsxEscape
-} from 'preact/jsx-runtime';
+} from 'avery/jsx-runtime';
 import { setupScratch, teardown } from '../../../test/_util/helpers';
 import { encodeEntities } from '../../src/utils';
 import { vi } from 'vitest';

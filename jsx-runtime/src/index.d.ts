@@ -1,13 +1,13 @@
 // Intentionally not using a relative path to take advantage of
 // the TS version resolution mechanism
-export { Fragment } from 'preact';
+export { Fragment } from 'avery';
 import {
 	ComponentType,
 	ComponentChild,
 	ComponentChildren,
 	VNode,
 	Attributes
-} from 'preact';
+} from 'avery';
 import { JSXInternal } from '../../src/jsx';
 
 export function jsx(

@@ -5,14 +5,14 @@ import {
 	FunctionalComponent,
 	h,
 	JSX
-} from 'preact';
+} from 'avery';
 import {
 	useCallback,
 	useContext,
 	useEffect,
 	useMemo,
 	useState
-} from 'preact/hooks';
+} from 'avery/hooks';
 
 export type RouterData = {
 	match: string[];

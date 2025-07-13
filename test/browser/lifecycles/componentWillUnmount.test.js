@@ -1,4 +1,4 @@
-import { createElement, render, Component } from 'preact';
+import { createElement, render, Component } from 'avery';
 import { setupScratch, teardown } from '../../_util/helpers';
 import { vi } from 'vitest';
 

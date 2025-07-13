@@ -5,12 +5,12 @@ import {
 	Component,
 	Fragment,
 	hydrate
-} from 'preact';
-import { useState } from 'preact/hooks';
+} from 'avery';
+import { useState } from 'avery/hooks';
 import { setupScratch, teardown } from '../../../test/_util/helpers';
 import './fakeDevTools';
-import 'preact/debug';
-import { setupRerender } from 'preact/test-utils';
+import 'avery/debug';
+import { setupRerender } from 'avery/test-utils';
 import { vi } from 'vitest';
 
 const h = createElement;
@@ -40,7 +40,7 @@ describe('debug', () => {
 	});
 
 	it('should initialize devtools', () => {
-		expect(window.__PREACT_DEVTOOLS__.attachPreact).toHaveBeenCalled();
+		expect(window.__AVERY_DEVTOOLS__.attachAvery).toHaveBeenCalled();
 	});
 
 	it('should print an error on rendering on undefined parent', () => {

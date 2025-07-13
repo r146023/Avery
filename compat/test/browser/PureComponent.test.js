@@ -1,5 +1,5 @@
-import React, { createElement } from 'preact/compat';
-import { setupRerender } from 'preact/test-utils';
+import React, { createElement } from 'avery/compat';
+import { setupRerender } from 'avery/test-utils';
 import { setupScratch, teardown } from '../../../test/_util/helpers';
 import { vi } from 'vitest';
 

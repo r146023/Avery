@@ -7,7 +7,7 @@ assignees: ''
 ---
 
 **Describe the feature you'd love to see**
-A clear and concise description of what you'd love to see added to Preact.
+A clear and concise description of what you'd love to see added to Avery.
 
 **Additional context (optional)**
 Add any other context or screenshots about the feature request here.

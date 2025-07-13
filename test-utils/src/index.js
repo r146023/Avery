@@ -1,4 +1,4 @@
-import { options } from 'preact';
+import { options } from 'avery';
 
 /**
  * Setup a rerender function that will drain the queue of pending renders
@@ -111,7 +111,7 @@ export function act(cb) {
 }
 
 /**
- * Teardown test environment and reset preact's internal state
+ * Teardown test environment and reset avery's internal state
  */
 export function teardown() {
 	if (options.__test__drainQueue) {

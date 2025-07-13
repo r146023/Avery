@@ -13,7 +13,7 @@ function setStyle(style, key, value) {
 
 const CAPTURE_REGEX = /(PointerCapture)$|Capture$/i;
 
-// A logical clock to solve issues like https://github.com/preactjs/preact/issues/3927.
+// A logical clock to solve issues like https://github.com/averyjs/avery/issues/3927.
 // When the DOM performs an event it leaves micro-ticks in between bubbling up which means that
 // an event can trigger on a newly reated DOM-node while the event bubbles up.
 //
@@ -28,7 +28,7 @@ let eventClock = 0;
 
 /**
  * Set a property value on a DOM node
- * @param {import('../internal').PreactElement} dom The DOM node to modify
+ * @param {import('../internal').AveryElement} dom The DOM node to modify
  * @param {string} name The name of the property to set
  * @param {*} value The value to set the property to
  * @param {*} oldValue The old value the property had
@@ -145,7 +145,7 @@ export function setProperty(dom, name, value, oldValue, namespace) {
 function createEventProxy(useCapture) {
 	/**
 	 * Proxy an event to hooked event handlers
-	 * @param {import('../internal').PreactEvent} e The event object from the browser
+	 * @param {import('../internal').AveryEvent} e The event object from the browser
 	 * @private
 	 */
 	return function (e) {

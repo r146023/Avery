@@ -1,4 +1,4 @@
-import { Component, Fragment, options } from 'preact';
+import { Component, Fragment, options } from 'avery';
 
 export function initDevTools() {
 	const globalVar =
@@ -11,9 +11,9 @@ export function initDevTools() {
 	if (
 		globalVar !== null &&
 		globalVar !== undefined &&
-		globalVar.__PREACT_DEVTOOLS__
+		globalVar.__AVERY_DEVTOOLS__
 	) {
-		globalVar.__PREACT_DEVTOOLS__.attachPreact('10.26.8', options, {
+		globalVar.__AVERY_DEVTOOLS__.attachAvery('10.26.8', options, {
 			Fragment,
 			Component
 		});

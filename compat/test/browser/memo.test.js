@@ -1,4 +1,4 @@
-import { setupRerender } from 'preact/test-utils';
+import { setupRerender } from 'avery/test-utils';
 import {
 	createEvent,
 	setupScratch,
@@ -10,7 +10,7 @@ import React, {
 	render,
 	memo,
 	useState
-} from 'preact/compat';
+} from 'avery/compat';
 import { vi } from 'vitest';
 
 const h = React.createElement;

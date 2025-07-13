@@ -11,5 +11,5 @@ coverage
 *.sw[op]
 *.log
 package/
-preact-*.tgz
-preact.tgz
+avery-*.tgz
+avery.tgz

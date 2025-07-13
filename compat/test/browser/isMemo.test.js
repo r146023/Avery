@@ -1,5 +1,5 @@
-import { createElement as preactCreateElement, Fragment } from 'preact';
-import React, { createElement, isMemo, memo } from 'preact/compat';
+import { createElement as averyCreateElement, Fragment } from 'avery';
+import React, { createElement, isMemo, memo } from 'avery/compat';
 
 describe('isMemo', () => {
 	it('should check return false for invalid arguments', () => {
@@ -12,7 +12,7 @@ describe('isMemo', () => {
 		expect(isMemo({})).to.equal(false);
 	});
 
-	it('should detect a preact memo', () => {
+	it('should detect a avery memo', () => {
 		function Foo() {
 			return <h1>Hello World</h1>;
 		}
@@ -27,8 +27,8 @@ describe('isMemo', () => {
 		expect(isMemo(Foo)).to.equal(false);
 	});
 
-	it('should detect a preact vnode as false', () => {
-		expect(isMemo(preactCreateElement(Fragment, {}))).to.equal(false);
+	it('should detect a avery vnode as false', () => {
+		expect(isMemo(averyCreateElement(Fragment, {}))).to.equal(false);
 	});
 
 	it('should detect a compat vnode as false', () => {

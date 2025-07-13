@@ -5,8 +5,8 @@ import {
 	hookSpy
 } from '../../../test/_util/optionSpies';
 
-import { setupRerender, act } from 'preact/test-utils';
-import { createElement, render, createContext, options } from 'preact';
+import { setupRerender, act } from 'avery/test-utils';
+import { createElement, render, createContext, options } from 'avery';
 import { setupScratch, teardown } from '../../../test/_util/helpers';
 import {
 	useState,
@@ -19,7 +19,7 @@ import {
 	useCallback,
 	useContext,
 	useErrorBoundary
-} from 'preact/hooks';
+} from 'avery/hooks';
 import { vi } from 'vitest';
 
 /** @jsx createElement */

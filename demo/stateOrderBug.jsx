@@ -1,6 +1,6 @@
 import htm from 'htm';
-import { h } from 'preact';
-import { useState, useCallback } from 'preact/hooks';
+import { h } from 'avery';
+import { useState, useCallback } from 'avery/hooks';
 
 const html = htm.bind(h);
 

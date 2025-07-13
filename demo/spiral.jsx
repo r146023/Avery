@@ -1,4 +1,4 @@
-import { createElement, Component } from 'preact';
+import { createElement, Component } from 'avery';
 
 const COUNT = 500;
 const LOOPS = 6;

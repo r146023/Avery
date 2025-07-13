@@ -22,7 +22,7 @@ async function main(tag, opts) {
 	log.debug('Options:', opts);
 
 	// 1. Find a release with the matching tag
-	const getReleaseByTagUrl = `https://api.github.com/repos/preactjs/preact/releases/tags/${tag}`;
+	const getReleaseByTagUrl = `https://api.github.com/repos/averyjs/avery/releases/tags/${tag}`;
 	const response = await fetch(getReleaseByTagUrl);
 	if (response.status == 404) {
 		log.error(
@@ -50,7 +50,7 @@ async function main(tag, opts) {
 	// 2. Find npm package release asset
 	/** @type {Release["assets"][0]} */
 	let packageAsset = null;
-	const artifactRegex = /^preact-.+\.tgz$/;
+	const artifactRegex = /^avery-.+\.tgz$/;
 	for (let asset of release.assets) {
 		if (artifactRegex.test(asset.name)) {
 			packageAsset = asset;

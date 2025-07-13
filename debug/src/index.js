@@ -1,5 +1,5 @@
 import { initDebug } from './debug';
-import 'preact/devtools';
+import 'avery/devtools';
 
 initDebug();
 

@@ -1,6 +1,6 @@
 import { createElement } from '../../src';
 
-// Test that preact types are available via the global `preact` namespace.
+// Test that avery types are available via the global `avery` namespace.
 
-let component: preact.ComponentChild;
+let component: avery.ComponentChild;
 component = <div>Hello World</div>;

@@ -1,10 +1,10 @@
 import {
-	render as preactRender,
-	hydrate as preactHydrate,
+	render as averyRender,
+	hydrate as averyHydrate,
 	options,
 	toChildArray,
 	Component
-} from 'preact';
+} from 'avery';
 import {
 	useCallback,
 	useContext,
@@ -17,7 +17,7 @@ import {
 	useReducer,
 	useRef,
 	useState
-} from 'preact/hooks';
+} from 'avery/hooks';
 import {
 	useDeferredValue,
 	useInsertionEffect,
@@ -41,12 +41,12 @@ const onChangeInputType = type => /fil|che|rad/.test(type);
 Component.prototype.isReactComponent = {};
 
 // `UNSAFE_*` lifecycle hooks
-// Preact only ever invokes the unprefixed methods.
+// Avery only ever invokes the unprefixed methods.
 // Here we provide a base "fallback" implementation that calls any defined UNSAFE_ prefixed method.
 // - If a component defines its own `componentDidMount()` (including via defineProperty), use that.
 // - If a component defines `UNSAFE_componentDidMount()`, `componentDidMount` is the alias getter/setter.
 // - If anything assigns to an `UNSAFE_*` property, the assignment is forwarded to the unprefixed property.
-// See https://github.com/preactjs/preact/issues/1941
+// See https://github.com/averyjs/avery/issues/1941
 [
 	'componentWillMount',
 	'componentWillReceiveProps',
@@ -70,7 +70,7 @@ Component.prototype.isReactComponent = {};
 /**
  * Proxy render() since React returns a Component reference.
  * @param {import('./internal').VNode} vnode VNode tree to render
- * @param {import('./internal').PreactElement} parent DOM node to render vnode tree into
+ * @param {import('./internal').AveryElement} parent DOM node to render vnode tree into
  * @param {() => void} [callback] Optional callback that will be called after rendering
  * @returns {import('./internal').Component | null} The root component reference or null
  */
@@ -81,14 +81,14 @@ export function render(vnode, parent, callback) {
 		parent.textContent = '';
 	}
 
-	preactRender(vnode, parent);
+	averyRender(vnode, parent);
 	if (typeof callback == 'function') callback();
 
 	return vnode ? vnode._component : null;
 }
 
 export function hydrate(vnode, parent, callback) {
-	preactHydrate(vnode, parent);
+	averyHydrate(vnode, parent);
 	if (typeof callback == 'function') callback();
 
 	return vnode ? vnode._component : null;

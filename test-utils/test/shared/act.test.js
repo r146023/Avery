@@ -1,6 +1,6 @@
-import { options, createElement, render } from 'preact';
-import { useEffect, useReducer, useState } from 'preact/hooks';
-import { act } from 'preact/test-utils';
+import { options, createElement, render } from 'avery';
+import { useEffect, useReducer, useState } from 'avery/hooks';
+import { act } from 'avery/test-utils';
 import { setupScratch, teardown } from '../../../test/_util/helpers';
 import { vi } from 'vitest';
 
@@ -166,7 +166,7 @@ describe('act', () => {
 		const button = scratch.querySelector('button');
 
 		// Click button. This will schedule an update which is deferred, as is
-		// normal for Preact, since it happens outside an `act` call.
+		// normal for Avery, since it happens outside an `act` call.
 		button.dispatchEvent(createEvent('click'));
 
 		expect(button.textContent).to.equal('0');

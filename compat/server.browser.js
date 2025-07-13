@@ -1,9 +1,9 @@
-import { renderToString } from 'preact-render-to-string';
+import { renderToString } from 'avery-render-to-string';
 
 export {
 	renderToString,
 	renderToString as renderToStaticMarkup
-} from 'preact-render-to-string';
+} from 'avery-render-to-string';
 
 export default {
 	renderToString,

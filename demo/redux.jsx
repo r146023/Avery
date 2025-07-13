@@ -1,4 +1,4 @@
-import { createElement } from 'preact';
+import { createElement } from 'avery';
 import React from 'react';
 import { createStore } from 'redux';
 import { connect, Provider } from 'react-redux';

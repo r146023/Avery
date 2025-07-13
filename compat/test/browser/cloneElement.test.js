@@ -1,5 +1,5 @@
-import { createElement as preactH } from 'preact';
-import React, { createElement, render, cloneElement } from 'preact/compat';
+import { createElement as averyH } from 'avery';
+import React, { createElement, render, cloneElement } from 'avery/compat';
 import { setupScratch, teardown } from '../../../test/_util/helpers';
 
 describe('compat cloneElement', () => {
@@ -90,7 +90,7 @@ describe('compat cloneElement', () => {
 			return <div>{props.value}</div>;
 		}
 
-		let clone = cloneElement(preactH(Foo, {}), { value: 'foo' });
+		let clone = cloneElement(averyH(Foo, {}), { value: 'foo' });
 		render(clone, scratch);
 		expect(scratch.textContent).to.equal('foo');
 	});

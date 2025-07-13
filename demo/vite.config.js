@@ -9,39 +9,39 @@ const resolvePkg = (...parts) => path.join(root, ...parts, 'src', 'index.js');
 export default defineConfig({
 	optimizeDeps: {
 		exclude: [
-			'preact',
-			'preact/compat',
-			'preact/debug',
-			'preact/hooks',
-			'preact/devtools',
-			'preact/jsx-runtime',
-			'preact/jsx-dev-runtime',
-			'preact-router',
+			'avery',
+			'avery/compat',
+			'avery/debug',
+			'avery/hooks',
+			'avery/devtools',
+			'avery/jsx-runtime',
+			'avery/jsx-dev-runtime',
+			'avery-router',
 			'react',
 			'react-dom'
 		]
 	},
 	resolve: {
 		alias: {
-			'preact/debug/src/debug': path.join(root, 'debug', 'src', 'debug'),
-			'preact/devtools/src/devtools': path.join(
+			'avery/debug/src/debug': path.join(root, 'debug', 'src', 'debug'),
+			'avery/devtools/src/devtools': path.join(
 				root,
 				'devtools',
 				'src',
 				'devtools'
 			),
-			//'preact/debug': resolvePkg('debug'),
-			'preact/devtools': resolvePkg('devtools'),
-			'preact/hooks': resolvePkg('hooks'),
-			'preact/jsx-runtime': resolvePkg('jsx-runtime'),
-			'preact/jsx-dev-runtime': resolvePkg('jsx-runtime'),
-			preact: resolvePkg(''),
+			//'avery/debug': resolvePkg('debug'),
+			'avery/devtools': resolvePkg('devtools'),
+			'avery/hooks': resolvePkg('hooks'),
+			'avery/jsx-runtime': resolvePkg('jsx-runtime'),
+			'avery/jsx-dev-runtime': resolvePkg('jsx-runtime'),
+			avery: resolvePkg(''),
 			'react-dom': resolvePkg('compat'),
 			react: resolvePkg('compat')
 		}
 	},
 	esbuild: {
 		jsx: 'automatic',
-		jsxImportSource: 'preact'
+		jsxImportSource: 'avery'
 	}
 });

@@ -1,5 +1,5 @@
-import { setupRerender } from 'preact/test-utils';
-import { createElement, render, Component, Fragment } from 'preact';
+import { setupRerender } from 'avery/test-utils';
+import { createElement, render, Component, Fragment } from 'avery';
 import { vi } from 'vitest';
 import { setupScratch, teardown } from '../../_util/helpers';
 import { logCall, clearLog } from '../../_util/logCall';

@@ -1,12 +1,12 @@
 import {
 	createElement,
-	render as preactRender,
-	cloneElement as preactCloneElement,
+	render as averyRender,
+	cloneElement as averyCloneElement,
 	createRef,
 	Component,
 	createContext,
 	Fragment
-} from 'preact';
+} from 'avery';
 import {
 	useState,
 	useId,
@@ -19,7 +19,7 @@ import {
 	useCallback,
 	useContext,
 	useDebugValue
-} from 'preact/hooks';
+} from 'avery/hooks';
 import {
 	useInsertionEffect,
 	startTransition,
@@ -92,17 +92,17 @@ function isMemo(element) {
  */
 function cloneElement(element) {
 	if (!isValidElement(element)) return element;
-	return preactCloneElement.apply(null, arguments);
+	return averyCloneElement.apply(null, arguments);
 }
 
 /**
  * Remove a component tree from the DOM, including state and event handlers.
- * @param {import('./internal').PreactElement} container
+ * @param {import('./internal').AveryElement} container
  * @returns {boolean}
  */
 function unmountComponentAtNode(container) {
 	if (container._children) {
-		preactRender(null, container);
+		averyRender(null, container);
 		return true;
 	}
 	return false;
@@ -111,7 +111,7 @@ function unmountComponentAtNode(container) {
 /**
  * Get the matching DOM node for a component
  * @param {import('./internal').Component} component
- * @returns {import('./internal').PreactElement | null}
+ * @returns {import('./internal').AveryElement | null}
  */
 function findDOMNode(component) {
 	return (
@@ -134,7 +134,7 @@ function findDOMNode(component) {
 const flushSync = (callback, arg) => callback(arg);
 
 /**
- * Strict Mode is not implemented in Preact, so we provide a stand-in for it
+ * Strict Mode is not implemented in Avery, so we provide a stand-in for it
  * that just renders its children without imposing any restrictions.
  */
 const StrictMode = Fragment;
@@ -142,7 +142,7 @@ const StrictMode = Fragment;
 // compat to react-is
 export const isElement = isValidElement;
 
-export * from 'preact/hooks';
+export * from 'avery/hooks';
 export {
 	version,
 	Children,

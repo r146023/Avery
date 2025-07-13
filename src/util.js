@@ -6,7 +6,7 @@ export const assign = Object.assign;
 
 /**
  * Remove a child node from its parent if attached.
- * @param {import('./internal').PreactElement | null} node The node to remove
+ * @param {import('./internal').AveryElement | null} node The node to remove
  */
 export function removeNode(node) {
 	if (node && node.parentNode) node.remove();

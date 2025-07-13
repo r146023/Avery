@@ -1,4 +1,4 @@
-import { render, hydrate, unmountComponentAtNode } from 'preact/compat';
+import { render, hydrate, unmountComponentAtNode } from 'avery/compat';
 
 export function createRoot(container) {
 	return {

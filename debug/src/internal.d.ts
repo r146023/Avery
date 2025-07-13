@@ -1,6 +1,6 @@
-import { Component, PreactElement, VNode, Options } from '../../src/internal';
+import { Component, AveryElement, VNode, Options } from '../../src/internal';
 
-export { Component, PreactElement, VNode, Options };
+export { Component, AveryElement, VNode, Options };
 
 export interface DevtoolsInjectOptions {
 	/** 1 = DEV, 0 = production */
@@ -37,7 +37,7 @@ export interface DevtoolData {
 	state: any;
 	props: any;
 	children: VNode[] | string | number | null;
-	publicInstance: PreactElement | Text | Component;
+	publicInstance: AveryElement | Text | Component;
 	memoizedInteractions: any[];
 
 	actualDuration: number;
@@ -75,7 +75,7 @@ export interface DevtoolsHook {
 export interface DevtoolsWindow extends Window {
 	/**
 	 * If the devtools extension is installed it will inject this object into
-	 * the dom. This hook handles all communications between preact and the
+	 * the dom. This hook handles all communications between avery and the
 	 * devtools panel.
 	 */
 	__REACT_DEVTOOLS_GLOBAL_HOOK__?: DevtoolsHook;

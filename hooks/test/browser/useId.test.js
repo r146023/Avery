@@ -1,7 +1,7 @@
-import { createElement, Fragment, hydrate, render } from 'preact';
-import { useId, useReducer, useState } from 'preact/hooks';
-import { setupRerender } from 'preact/test-utils';
-import { render as rts } from 'preact-render-to-string';
+import { createElement, Fragment, hydrate, render } from 'avery';
+import { useId, useReducer, useState } from 'avery/hooks';
+import { setupRerender } from 'avery/test-utils';
+import { render as rts } from 'avery-render-to-string';
 import { setupScratch, teardown } from '../../../test/_util/helpers';
 
 /** @jsx createElement */

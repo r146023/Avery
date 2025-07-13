@@ -1,4 +1,4 @@
-import { act, setupRerender } from 'preact/test-utils';
+import { act, setupRerender } from 'avery/test-utils';
 import React, {
 	createElement,
 	render,
@@ -11,7 +11,7 @@ import React, {
 	useEffect,
 	useLayoutEffect,
 	memo
-} from 'preact/compat';
+} from 'avery/compat';
 import { setupScratch, teardown } from '../../../test/_util/helpers';
 import { createLazy, createSuspender } from './suspense-utils';
 import { vi } from 'vitest';
@@ -313,7 +313,7 @@ describe('suspense', () => {
 			</Suspense>,
 			scratch
 		);
-		rerender(); // Flush rerender queue to mimic what preact will really do
+		rerender(); // Flush rerender queue to mimic what avery will really do
 		expect(scratch.innerHTML).to.equal('');
 
 		return resolve(() => <div>Hello</div>).then(() => {
@@ -421,7 +421,7 @@ describe('suspense', () => {
 
 			expect(lifecycles.componentWillMount).toHaveBeenCalledOnce();
 			expect(lifecycles.componentDidMount).toHaveBeenCalledOnce();
-			// TODO: This is unexpected. See TODO in next test regarding this and preactjs/preact#2098
+			// TODO: This is unexpected. See TODO in next test regarding this and averyjs/avery#2098
 			expect(lifecycles.componentDidUpdate).toHaveBeenCalledOnce();
 			expect(lifecycles.componentWillUnmount).not.toHaveBeenCalled();
 		});

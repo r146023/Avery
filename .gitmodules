@@ -1,3 +1,3 @@
 [submodule "benchmarks"]
 	path = benchmarks
-	url = https://github.com/preactjs/benchmarks
+	url = https://github.com/averyjs/benchmarks

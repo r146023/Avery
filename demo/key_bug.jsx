@@ -1,4 +1,4 @@
-import { Component } from 'preact';
+import { Component } from 'avery';
 
 function Foo(props) {
 	return <div>This is: {props.children}</div>;

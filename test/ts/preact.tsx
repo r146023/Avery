@@ -46,7 +46,7 @@ class DummyComponent extends Component<DummyProps, DummyState> {
 		return (
 			<div>
 				<DummerComponent initialInput={initialInput} input={input} />
-				{/* Can specify all Preact attributes on a typed FunctionalComponent */}
+				{/* Can specify all Avery attributes on a typed FunctionalComponent */}
 				<ComponentWithChildren
 					initialInput={initialInput}
 					input={input}
@@ -155,7 +155,7 @@ const DummyChildren: FunctionalComponent = ({ children }) => {
 	return children;
 };
 
-function ReturnChildren(props: { children: preact.ComponentChildren }) {
+function ReturnChildren(props: { children: avery.ComponentChildren }) {
 	return props.children;
 }
 
@@ -185,7 +185,7 @@ class ComponentUsingRef extends Component<any, any> {
 					<span ref={this.setRef}>{el}</span>
 				))}
 
-				{/* Can specify Preact attributes on a component */}
+				{/* Can specify Avery attributes on a component */}
 				<DummyComponent initialInput="1" key="1" ref={this.setRef} />
 			</div>
 		);

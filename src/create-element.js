@@ -33,7 +33,7 @@ export function createElement(type, props, children) {
 }
 
 /**
- * Create a VNode (used internally by Preact)
+ * Create a VNode (used internally by Avery)
  * @param {import('./internal').VNode["type"]} type The node name or Component
  * Constructor for this virtual node
  * @param {object | string | number | null} props The properties of this virtual node.
@@ -79,7 +79,7 @@ export function Fragment(props) {
 }
 
 /**
- * Check if a the argument is a valid Preact VNode.
+ * Check if a the argument is a valid Avery VNode.
  * @param {*} vnode
  * @returns {vnode is VNode}
  */

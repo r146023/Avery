@@ -1,7 +1,7 @@
-import React, { render, hydrate, useState } from 'preact/compat';
-import ReactDOMServer from 'preact/compat/server';
+import React, { render, hydrate, useState } from 'avery/compat';
+import ReactDOMServer from 'avery/compat/server';
 import { setupScratch, teardown } from '../../../test/_util/helpers';
-import { act } from 'preact/test-utils';
+import { act } from 'avery/test-utils';
 
 describe('Textarea', () => {
 	/** @type {HTMLElement} */
@@ -59,7 +59,7 @@ describe('Textarea', () => {
 		// Note: This looks counterintuitive, but it's working correctly - the value
 		// missing from HTML because innerHTML doesn't serialize form field values.
 		// See demo: https://jsfiddle.net/4had2Lu8
-		// Related renderToString PR: preactjs/preact-render-to-string#161
+		// Related renderToString PR: averyjs/avery-render-to-string#161
 		expect(scratch.innerHTML).to.equal('<textarea></textarea>');
 		expect(scratch.firstElementChild.value).to.equal('hello');
 

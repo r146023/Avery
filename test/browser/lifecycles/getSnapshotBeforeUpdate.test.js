@@ -1,5 +1,5 @@
-import { setupRerender } from 'preact/test-utils';
-import { createElement, render, Component } from 'preact';
+import { setupRerender } from 'avery/test-utils';
+import { createElement, render, Component } from 'avery';
 import { setupScratch, teardown } from '../../_util/helpers';
 
 /** @jsx createElement */

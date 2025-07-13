@@ -1,6 +1,6 @@
-import { createElement, render, lazy, Suspense } from 'preact/compat';
-import 'preact/debug';
-import { setupRerender } from 'preact/test-utils';
+import { createElement, render, lazy, Suspense } from 'avery/compat';
+import 'avery/debug';
+import { setupRerender } from 'avery/test-utils';
 import {
 	setupScratch,
 	teardown,

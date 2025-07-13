@@ -1,3 +1,3 @@
-import 'preact/compat';
+import 'avery/compat';
 
-export * from 'preact/jsx-runtime';
+export * from 'avery/jsx-runtime';

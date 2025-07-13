@@ -1,4 +1,4 @@
-import { createElement, Fragment, JSX } from 'preact';
+import { createElement, Fragment, JSX } from 'avery';
 
 function createSignal<T>(value: T): JSX.SignalLike<T> {
 	return {

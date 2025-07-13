@@ -1,8 +1,8 @@
 {
-  "name": "preact-devtools",
-  "amdName": "preactDevtools",
+  "name": "avery-devtools",
+  "amdName": "averyDevtools",
   "private": true,
-  "description": "Preact bridge for Preact devtools",
+  "description": "Avery bridge for Avery devtools",
   "main": "dist/devtools.js",
   "module": "dist/devtools.mjs",
   "umd:main": "dist/devtools.umd.js",
@@ -10,6 +10,6 @@
   "types": "src/index.d.ts",
   "license": "MIT",
   "peerDependencies": {
-    "preact": "^10.0.0"
+    "avery": "^10.0.0"
   }
 }

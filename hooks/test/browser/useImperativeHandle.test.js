@@ -1,7 +1,7 @@
-import { createElement, render } from 'preact';
+import { createElement, render } from 'avery';
 import { setupScratch, teardown } from '../../../test/_util/helpers';
-import { useImperativeHandle, useRef, useState } from 'preact/hooks';
-import { setupRerender } from 'preact/test-utils';
+import { useImperativeHandle, useRef, useState } from 'avery/hooks';
+import { setupRerender } from 'avery/test-utils';
 import { vi } from 'vitest';
 
 /** @jsx createElement */

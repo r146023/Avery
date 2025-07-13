@@ -1,16 +1,16 @@
 import {
-	Component as PreactComponent,
-	VNode as PreactVNode,
-	FunctionComponent as PreactFunctionComponent,
-	PreactElement
+	Component as AveryComponent,
+	VNode as AveryVNode,
+	FunctionComponent as AveryFunctionComponent,
+	AveryElement
 } from '../../src/internal';
 import { SuspenseProps } from './suspense';
 
 export { ComponentChildren } from '../..';
 
-export { PreactElement };
+export { AveryElement };
 
-export interface Component<P = {}, S = {}> extends PreactComponent<P, S> {
+export interface Component<P = {}, S = {}> extends AveryComponent<P, S> {
 	isReactComponent?: object;
 	isPureReactComponent?: true;
 	_patchedLifecycles?: true;
@@ -22,17 +22,17 @@ export interface Component<P = {}, S = {}> extends PreactComponent<P, S> {
 
 	// Portal internal properties
 	_temp: any;
-	_container: PreactElement;
+	_container: AveryElement;
 }
 
-export interface FunctionComponent<P = {}> extends PreactFunctionComponent<P> {
+export interface FunctionComponent<P = {}> extends AveryFunctionComponent<P> {
 	shouldComponentUpdate?(nextProps: Readonly<P>): boolean;
 	_patchedLifecycles?: true;
 }
 
-export interface VNode<T = any> extends PreactVNode<T> {
+export interface VNode<T = any> extends AveryVNode<T> {
 	$$typeof?: symbol;
-	preactCompatNormalized?: boolean;
+	averyCompatNormalized?: boolean;
 }
 
 export interface SuspenseState {
@@ -40,7 +40,7 @@ export interface SuspenseState {
 }
 
 export interface SuspenseComponent
-	extends PreactComponent<SuspenseProps, SuspenseState> {
+	extends AveryComponent<SuspenseProps, SuspenseState> {
 	_pendingSuspensionCount: number;
 	_suspenders: Component[];
 	_detachOnNextRender: null | VNode<any>;

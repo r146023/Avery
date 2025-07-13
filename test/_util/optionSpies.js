@@ -1,7 +1,7 @@
-import { options as rawOptions } from 'preact';
+import { options as rawOptions } from 'avery';
 import { vi } from 'vitest';
 
-/** @type {import('preact/src/internal').Options} */
+/** @type {import('avery/src/internal').Options} */
 let options = rawOptions;
 
 let oldVNode = options.vnode;

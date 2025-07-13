@@ -1,1 +1,1 @@
-module.exports = require('preact/test-utils');
+module.exports = require('avery/test-utils');

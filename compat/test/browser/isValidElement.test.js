@@ -1,5 +1,5 @@
-import { createElement as preactCreateElement } from 'preact';
-import React, { isValidElement } from 'preact/compat';
+import { createElement as averyCreateElement } from 'avery';
+import React, { isValidElement } from 'avery/compat';
 
 describe('isValidElement', () => {
 	it('should check return false for invalid arguments', () => {
@@ -12,8 +12,8 @@ describe('isValidElement', () => {
 		expect(isValidElement({})).to.equal(false);
 	});
 
-	it('should detect a preact vnode', () => {
-		expect(isValidElement(preactCreateElement('div', {}))).to.equal(true);
+	it('should detect a avery vnode', () => {
+		expect(isValidElement(averyCreateElement('div', {}))).to.equal(true);
 	});
 
 	it('should detect a compat vnode', () => {

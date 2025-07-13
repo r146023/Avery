@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect, useEffect } from 'preact/hooks';
+import { useState, useLayoutEffect, useEffect } from 'avery/hooks';
 
 /**
  * This is taken from https://github.com/facebook/react/blob/main/packages/use-sync-external-store/src/useSyncExternalStoreShimClient.js#L84

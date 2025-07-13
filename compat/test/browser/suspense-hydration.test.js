@@ -1,4 +1,4 @@
-import { setupRerender } from 'preact/test-utils';
+import { setupRerender } from 'avery/test-utils';
 import React, {
 	createElement,
 	hydrate,
@@ -6,7 +6,7 @@ import React, {
 	Suspense,
 	memo,
 	useState
-} from 'preact/compat';
+} from 'avery/compat';
 import { logCall, getLog, clearLog } from '../../../test/_util/logCall';
 import {
 	createEvent,
@@ -85,7 +85,7 @@ describe('suspense hydration', () => {
 			</Suspense>,
 			scratch
 		);
-		rerender(); // Flush rerender queue to mimic what preact will really do
+		rerender(); // Flush rerender queue to mimic what avery will really do
 		expect(scratch.innerHTML).to.equal('<div>Hello</div>');
 		expect(getLog()).to.deep.equal([]);
 		clearLog();
@@ -109,7 +109,7 @@ describe('suspense hydration', () => {
 			</Suspense>,
 			scratch
 		);
-		rerender(); // Flush rerender queue to mimic what preact will really do
+		rerender(); // Flush rerender queue to mimic what avery will really do
 		expect(scratch.innerHTML).to.equal('<!-- test --><div>Hello</div>');
 		expect(getLog()).to.deep.equal([]);
 		clearLog();
@@ -137,7 +137,7 @@ describe('suspense hydration', () => {
 			</Suspense>,
 			scratch
 		);
-		rerender(); // Flush rerender queue to mimic what preact will really do
+		rerender(); // Flush rerender queue to mimic what avery will really do
 		expect(scratch.innerHTML).to.equal('<div>Hello</div><div>World!</div>');
 		expect(getLog()).to.deep.equal([]);
 		clearLog();
@@ -187,7 +187,7 @@ describe('suspense hydration', () => {
 			</Fragment>,
 			scratch
 		);
-		rerender(); // Flush rerender queue to mimic what preact will really do
+		rerender(); // Flush rerender queue to mimic what avery will really do
 		expect(scratch.innerHTML).to.equal('<div>Count: 0</div><div>Hello</div>');
 		// Re: DOM OP below - Known issue with hydrating merged text nodes
 		expect(getLog()).to.deep.equal(['<div>Count: .appendChild(#text)']);
@@ -238,7 +238,7 @@ describe('suspense hydration', () => {
 		}
 
 		hydrate(<Component />, scratch);
-		rerender(); // Flush rerender queue to mimic what preact will really do
+		rerender(); // Flush rerender queue to mimic what avery will really do
 		expect(scratch.innerHTML).to.equal('<div>Count: 0</div><div>Hello</div>');
 		// Re: DOM OP below - Known issue with hydrating merged text nodes
 		expect(getLog()).to.deep.equal(['<div>Count: .appendChild(#text)']);
@@ -292,7 +292,7 @@ describe('suspense hydration', () => {
 		}
 
 		hydrate(<Component />, scratch);
-		rerender(); // Flush rerender queue to mimic what preact will really do
+		rerender(); // Flush rerender queue to mimic what avery will really do
 		expect(scratch.innerHTML).to.equal('<div>Count: 0</div><div>Hello</div>');
 		// Re: DOM OP below - Known issue with hydrating merged text nodes
 		expect(getLog()).to.deep.equal(['<div>Count: .appendChild(#text)']);
@@ -335,7 +335,7 @@ describe('suspense hydration', () => {
 		}
 
 		hydrate(<Component />, scratch);
-		rerender(); // Flush rerender queue to mimic what preact will really do
+		rerender(); // Flush rerender queue to mimic what avery will really do
 
 		hide();
 		rerender();
@@ -357,7 +357,7 @@ describe('suspense hydration', () => {
 			</Suspense>,
 			scratch
 		);
-		rerender(); // Flush rerender queue to mimic what preact will really do
+		rerender(); // Flush rerender queue to mimic what avery will really do
 		expect(scratch.innerHTML).to.equal('<div><div>Hello</div></div>');
 		expect(getLog()).to.deep.equal([]);
 		clearLog();
@@ -395,7 +395,7 @@ describe('suspense hydration', () => {
 			</ul>,
 			scratch
 		);
-		rerender(); // Flush rerender queue to mimic what preact will really do
+		rerender(); // Flush rerender queue to mimic what avery will really do
 		expect(scratch.innerHTML).to.equal(originalHtml);
 		expect(getLog()).to.deep.equal([]);
 		expect(listeners[4]).not.toHaveBeenCalled();
@@ -451,7 +451,7 @@ describe('suspense hydration', () => {
 			</List>,
 			scratch
 		);
-		rerender(); // Flush rerender queue to mimic what preact will really do
+		rerender(); // Flush rerender queue to mimic what avery will really do
 		expect(scratch.innerHTML).to.equal(originalHtml);
 		expect(getLog()).to.deep.equal([]);
 		expect(listeners[4]).not.toHaveBeenCalled();
@@ -506,7 +506,7 @@ describe('suspense hydration', () => {
 			</Suspense>,
 			scratch
 		);
-		rerender(); // Flush rerender queue to mimic what preact will really do
+		rerender(); // Flush rerender queue to mimic what avery will really do
 		expect(scratch.innerHTML).to.equal(html);
 		expect(getLog()).to.deep.equal(['<div>Count: .appendChild(#text)']);
 		clearLog();
@@ -556,7 +556,7 @@ describe('suspense hydration', () => {
 			</Suspense>,
 			scratch
 		);
-		rerender(); // Flush rerender queue to mimic what preact will really do
+		rerender(); // Flush rerender queue to mimic what avery will really do
 		expect(scratch.innerHTML).to.equal(html);
 		expect(getLog()).to.deep.equal([
 			'<div>Count: .appendChild(#text)',
@@ -629,7 +629,7 @@ describe('suspense hydration', () => {
 		// Validate initial hydration suspend resumes (initial markup stays the same
 		// and event listeners attached)
 		hydrate(<App />, scratch);
-		rerender(); // Flush rerender queue to mimic what preact will really do
+		rerender(); // Flush rerender queue to mimic what avery will really do
 		expect(scratch.innerHTML, 'initial HTML').to.equal(originalHtml);
 		expect(getLog()).to.deep.equal([]);
 		clearLog();
@@ -746,7 +746,7 @@ describe('suspense hydration', () => {
 			</List>,
 			scratch
 		);
-		rerender(); // Flush rerender queue to mimic what preact will really do
+		rerender(); // Flush rerender queue to mimic what avery will really do
 		expect(getLog()).to.deep.equal([]);
 		expect(scratch.innerHTML).to.equal(originalHtml);
 		expect(listeners[5]).not.toHaveBeenCalled();
@@ -810,7 +810,7 @@ describe('suspense hydration', () => {
 			</List>,
 			scratch
 		);
-		rerender(); // Flush rerender queue to mimic what preact will really do
+		rerender(); // Flush rerender queue to mimic what avery will really do
 		expect(getLog()).to.deep.equal([]);
 		expect(scratch.innerHTML).to.equal(originalHtml);
 		expect(listeners[3]).not.toHaveBeenCalled();
@@ -848,7 +848,7 @@ describe('suspense hydration', () => {
 			</Suspense>,
 			scratch
 		);
-		rerender(); // Flush rerender queue to mimic what preact will really do
+		rerender(); // Flush rerender queue to mimic what avery will really do
 		expect(scratch.innerHTML).to.equal(
 			'<!--$s--><div>Hello</div><div>World!</div><!--/$s-->'
 		);
@@ -885,7 +885,7 @@ describe('suspense hydration', () => {
 			</>,
 			scratch
 		);
-		rerender(); // Flush rerender queue to mimic what preact will really do
+		rerender(); // Flush rerender queue to mimic what avery will really do
 		expect(scratch.innerHTML).to.equal(
 			'<!--$s--><!--/$s--><div>Hello world</div>'
 		);
@@ -923,7 +923,7 @@ describe('suspense hydration', () => {
 			</>,
 			scratch
 		);
-		rerender(); // Flush rerender queue to mimic what preact will really do
+		rerender(); // Flush rerender queue to mimic what avery will really do
 		expect(scratch.innerHTML).to.equal(
 			'<!--$s--><!--$s--><!--/$s--><!--/$s--><div>Hello world</div>'
 		);
@@ -970,7 +970,7 @@ describe('suspense hydration', () => {
 			</>,
 			scratch
 		);
-		rerender(); // Flush rerender queue to mimic what preact will really do
+		rerender(); // Flush rerender queue to mimic what avery will really do
 		expect(scratch.innerHTML).to.equal(
 			'<!--$s--><!--$s--><p>I am</p><span>Fragment</span><!--/$s--><!--/$s--><div>Hello world</div>'
 		);

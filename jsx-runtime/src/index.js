@@ -1,4 +1,4 @@
-import { options, Fragment } from 'preact';
+import { options, Fragment } from 'avery';
 import { encodeEntities } from './utils';
 
 let vnodeId = 0;
@@ -19,8 +19,8 @@ const isArray = Array.isArray;
 /**
  * JSX.Element factory used by Babel's {runtime:"automatic"} JSX transform
  * @param {import('../../src/internal').VNode['type']} type
- * @param {import('preact').VNode['props']} props
- * @param {import('preact').VNode['key']} [key]
+ * @param {import('avery').VNode['props']} props
+ * @param {import('avery').VNode['key']} [key]
  * @param {unknown} [isStaticChildren]
  * @param {unknown} [__source]
  * @param {unknown} [__self]
@@ -72,8 +72,8 @@ function createVNode(type, props, key, isStaticChildren, __source, __self) {
  * Create a template vnode. This function is not expected to be
  * used directly, but rather through a precompile JSX transform
  * @param {string[]} templates
- * @param  {Array<string | null | import('preact').VNode>} exprs
- * @returns {import('preact').VNode}
+ * @param  {Array<string | null | import('avery').VNode>} exprs
+ * @returns {import('avery').VNode}
  */
 function jsxTemplate(templates, ...exprs) {
 	const vnode = createVNode(Fragment, { tpl: templates, exprs });
@@ -150,7 +150,7 @@ function jsxAttr(name, value) {
  * is not expected to be used directly, but rather through a
  * precompile JSX transform
  * @param {*} value
- * @returns {string | null | import('preact').VNode | Array<string | null | import('preact').VNode>}
+ * @returns {string | null | import('avery').VNode | Array<string | null | import('avery').VNode>}
  */
 function jsxEscape(value) {
 	if (

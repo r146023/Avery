@@ -1,8 +1,8 @@
 {
-  "name": "preact-hooks",
-  "amdName": "preactHooks",
+  "name": "avery-hooks",
+  "amdName": "averyHooks",
   "private": true,
-  "description": "Hook addon for Preact",
+  "description": "Hook addon for Avery",
   "main": "dist/hooks.js",
   "module": "dist/hooks.mjs",
   "umd:main": "dist/hooks.umd.js",
@@ -13,6 +13,6 @@
     "regex": "^_"
   },
   "peerDependencies": {
-    "preact": "^10.0.0"
+    "avery": "^10.0.0"
   }
 }

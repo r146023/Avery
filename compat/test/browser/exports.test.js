@@ -1,9 +1,9 @@
-import Compat from 'preact/compat';
-import CompatClient from 'preact/compat/client';
+import Compat from 'avery/compat';
+import CompatClient from 'avery/compat/client';
 // eslint-disable-next-line no-duplicate-imports
-import * as Named from 'preact/compat';
+import * as Named from 'avery/compat';
 // eslint-disable-next-line no-duplicate-imports
-import * as NamedClient from 'preact/compat/client';
+import * as NamedClient from 'avery/compat/client';
 
 describe('compat exports', () => {
 	describe('client', () => {

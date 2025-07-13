@@ -1,12 +1,12 @@
-import { createElement, render, createRef } from 'preact';
+import { createElement, render, createRef } from 'avery';
 import { setupScratch, teardown } from '../../../test/_util/helpers';
 import './fakeDevTools';
-import 'preact/debug';
+import 'avery/debug';
 import * as PropTypes from 'prop-types';
 
 // eslint-disable-next-line no-duplicate-imports
-import { resetPropWarnings } from 'preact/debug';
-import { forwardRef, createPortal } from 'preact/compat';
+import { resetPropWarnings } from 'avery/debug';
+import { forwardRef, createPortal } from 'avery/compat';
 import { vi } from 'vitest';
 
 const h = createElement;

@@ -2,7 +2,7 @@
   "name": "jsx-runtime",
   "amdName": "jsxRuntime",
   "private": true,
-  "description": "Preact JSX runtime",
+  "description": "Avery JSX runtime",
   "main": "dist/jsxRuntime.js",
   "module": "dist/jsxRuntime.mjs",
   "umd:main": "dist/jsxRuntime.umd.js",
@@ -13,6 +13,6 @@
     "regex": "^_"
   },
   "peerDependencies": {
-    "preact": "^10.0.0"
+    "avery": "^10.0.0"
   }
 }

@@ -1,4 +1,4 @@
-import { createElement, render } from 'preact';
+import { createElement, render } from 'avery';
 
 /**
  * @param {import('../../src/index').RenderableProps<{ context: any }>} props
@@ -63,7 +63,7 @@ function Portal(props) {
 /**
  * Create a `Portal` to continue rendering the vnode tree at a different DOM node
  * @param {import('./internal').VNode} vnode The vnode to render
- * @param {import('./internal').PreactElement} container The DOM node to continue rendering in to.
+ * @param {import('./internal').AveryElement} container The DOM node to continue rendering in to.
  */
 export function createPortal(vnode, container) {
 	const el = createElement(Portal, { _vnode: vnode, _container: container });

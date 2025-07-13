@@ -14,7 +14,7 @@ async function upload({ require, github, context, glob, release }) {
 	const fs = require('fs');
 
 	// Find artifact to upload
-	const artifactPattern = 'preact.tgz';
+	const artifactPattern = 'avery.tgz';
 	const globber = await glob.create(artifactPattern, {
 		matchDirectories: false
 	});
@@ -31,8 +31,8 @@ async function upload({ require, github, context, glob, release }) {
 	}
 
 	const assetPath = results[0];
-	const assetName = `preact-${release.tag_name.replace(/^v/, '')}.tgz`;
-	const assetRegex = /^preact-.+\.tgz$/;
+	const assetName = `avery-${release.tag_name.replace(/^v/, '')}.tgz`;
+	const assetRegex = /^avery-.+\.tgz$/;
 
 	for (let asset of release.assets) {
 		if (assetRegex.test(asset.name)) {

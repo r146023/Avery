@@ -1,18 +1,18 @@
 # Contributing
 
-This document is intended for developers interest in making contributions to Preact and document our internal processes like releasing a new version.
+This document is intended for developers interest in making contributions to Avery and document our internal processes like releasing a new version.
 
 ## Getting Started
 
-This steps will help you to set up your development environment. That includes all dependencies we use to build Preact and developer tooling like git commit hooks.
+This steps will help you to set up your development environment. That includes all dependencies we use to build Avery and developer tooling like git commit hooks.
 
-1. Clone the git repository: `git clone git@github.com:preactjs/preact.git`
-2. Go into the cloned folder: `cd preact/`
+1. Clone the git repository: `git clone git@github.com:averyjs/avery.git`
+2. Go into the cloned folder: `cd avery/`
 3. Install all dependencies: `npm install`
 
 ## The Repo Structure
 
-This repository contains Preact itself, as well as several addons like the debugging package for example. This is reflected in the directory structure of this repository. Each package has a `src/` folder where the source code can be found, a `test` folder for all sorts of tests that check if the code in `src/` is correct, and a `dist/` folder where you can find the bundled artifacts. Note that the `dist/` folder may not be present initially. It will be created as soon as you run any of the build scripts inside `package.json`. More on that later ;)
+This repository contains Avery itself, as well as several addons like the debugging package for example. This is reflected in the directory structure of this repository. Each package has a `src/` folder where the source code can be found, a `test` folder for all sorts of tests that check if the code in `src/` is correct, and a `dist/` folder where you can find the bundled artifacts. Note that the `dist/` folder may not be present initially. It will be created as soon as you run any of the build scripts inside `package.json`. More on that later ;)
 
 A quick overview of our repository:
 
@@ -23,7 +23,7 @@ A quick overview of our repository:
   test/ # Unit tests for core
   dist/ # Build artifacts for publishing on npm (may not be present)
 
-  # Sub-package, can be imported via `preact/compat` by users.
+  # Sub-package, can be imported via `avery/compat` by users.
   # Compat stands for react-compatibility layer which tries to mirror the
   # react API as close as possible (mostly legacy APIs)
   compat/
@@ -31,7 +31,7 @@ A quick overview of our repository:
   	test/ # Tests related to the compat addon
   	dist/ # Build artifacts for publishing on npm (may not be present)
 
-  # Sub-package, can be imported via `preact/hooks` by users.
+  # Sub-package, can be imported via `avery/hooks` by users.
   # The hooks API is an effect based API to deal with component lifcycles.
   # It's similar to hooks in React
   hooks/
@@ -39,16 +39,16 @@ A quick overview of our repository:
   	test/ # Tests related to the hooks addon
   	dist/ # Build artifacts for publishing on npm (may not be present)
 
-  # Sub-package, can be imported via `preact/debug` by users.
+  # Sub-package, can be imported via `avery/debug` by users.
   # Includes debugging warnings and error messages for common mistakes found
-  # in Preact application. Also hosts the devtools bridge
+  # in Avery application. Also hosts the devtools bridge
   debug/
   	src/  # Source code of the debug addon
   	test/ # Tests related to the debug addon
   	dist/ # Build artifacts for publishing on npm (may not be present)
 
-  # Sub-package, can be imported via `preact/test-utils` by users.
-  # Provides helpers to make testing Preact applications easier
+  # Sub-package, can be imported via `avery/test-utils` by users.
+  # Provides helpers to make testing Avery applications easier
   test-utils/
   	src/  # Source code of the test-utils addon
   	test/ # Tests related to the test-utils addon
@@ -62,7 +62,7 @@ A quick overview of our repository:
   package.json
 ```
 
-_Note: The code for rendering Preact on the server lives in another repo and is a completely separate npm package. It can be found here: [https://github.com/preactjs/preact-render-to-string](https://github.com/preactjs/preact-render-to-string)_
+_Note: The code for rendering Avery on the server lives in another repo and is a completely separate npm package. It can be found here: [https://github.com/averyjs/avery-render-to-string](https://github.com/averyjs/avery-render-to-string)_
 
 ### What does `mangle.json` do?
 
@@ -70,15 +70,15 @@ It's a special file that can be used to specify how `terser` (previously known a
 
 ## What does `options.js` do?
 
-Unique to Preact we do support several ways to hook into our renderer. All our addons use that to inject code at different stages of a render process. They are documented in our typings in `internal.d.ts`. The core itself doesn't make use of them, which is why the file only contains an empty `object`.
+Unique to Avery we do support several ways to hook into our renderer. All our addons use that to inject code at different stages of a render process. They are documented in our typings in `internal.d.ts`. The core itself doesn't make use of them, which is why the file only contains an empty `object`.
 
 ## Important Branches
 
-We merge every PR into the `main` branch which is the one that we'll use to publish code to npm. For the previous Preact release line we have a branch called `8` which is in maintenance mode. As a new contributor you won't have to deal with that ;)
+We merge every PR into the `main` branch which is the one that we'll use to publish code to npm. For the previous Avery release line we have a branch called `8` which is in maintenance mode. As a new contributor you won't have to deal with that ;)
 
 ## Creating your first Pull-Request
 
-We try to make it as easy as possible to contribute to Preact and make heavy use of GitHub's "Draft PR" feature which tags Pull-Requests (short = PR) as work in progress. PRs tend to be published as soon as there is an idea that the developer deems worthwhile to include into Preact and has written some rough code. The PR doesn't have to be perfect or anything really ;)
+We try to make it as easy as possible to contribute to Avery and make heavy use of GitHub's "Draft PR" feature which tags Pull-Requests (short = PR) as work in progress. PRs tend to be published as soon as there is an idea that the developer deems worthwhile to include into Avery and has written some rough code. The PR doesn't have to be perfect or anything really ;)
 
 Once a PR or a Draft PR has been created our community typically joins the discussion about the proposed change. Sometimes that includes ideas for test cases or even different ways to go about implementing a feature. Often this also includes ideas on how to make the code smaller. We usually refer to the latter as "code-golfing" or just "golfing".
 
@@ -98,7 +98,7 @@ The short summary is:
 Scripts can be executed via `npm run [script]` or `yarn [script]` respectively.
 
 - `build` - compiles all packages ready for publishing to npm
-- `build:core` - builds just Preact itself
+- `build:core` - builds just Avery itself
 - `build:debug` - builds the debug addon only
 - `build:hooks` - builds the hook addon only
 - `build:test-utils` - builds the test-utils addon only
@@ -133,7 +133,7 @@ it.only('should test something', () => {
 
 ## Benchmarks
 
-We have a benchmark suite that we use to measure the performance of Preact. Our benchmark suite lives in our [preactjs/benchmarks repository](https://github.com/preactjs/benchmarks), but is included here as Git submodule. To run the benchmarks, first ensure [PNPM](https://pnpm.io/installation) is installed on your system and initialize and setup the submodule (it uses `pnpm` as a package manager):
+We have a benchmark suite that we use to measure the performance of Avery. Our benchmark suite lives in our [averyjs/benchmarks repository](https://github.com/averyjs/benchmarks), but is included here as Git submodule. To run the benchmarks, first ensure [PNPM](https://pnpm.io/installation) is installed on your system and initialize and setup the submodule (it uses `pnpm` as a package manager):
 
 ```bash
 pnpm -v # Make sure pnpm is installed
@@ -159,7 +159,7 @@ Checkout the README in the benchmarks folder for more information on running ben
 
 ### Why does the JSDoc use TypeScript syntax to specify types?
 
-Several members of the team are very fond of TypeScript and we wanted to leverage as many of its advantages, like improved autocompletion, for Preact. We even attempted to port Preact to TypeScript a few times, but we ran into many issues with the DOM typings. Those would force us to fill our codebase with many `any` castings, making our code very noisy.
+Several members of the team are very fond of TypeScript and we wanted to leverage as many of its advantages, like improved autocompletion, for Avery. We even attempted to port Avery to TypeScript a few times, but we ran into many issues with the DOM typings. Those would force us to fill our codebase with many `any` castings, making our code very noisy.
 
 Luckily TypeScript has a mode where it can somewhat reliably typecheck JavaScript code by reusing the types defined in JSDoc blocks. It's not perfect and it often has trouble inferring the correct types the further one strays away from the function arguments, but it's good enough that it helps us a lot with autocompletion. Another plus is that we can make sure that our TypeScript definitons are correct at the same time.
 
@@ -171,7 +171,7 @@ _Note that we have separate tests for our TypeScript definition files. We only u
 
 There is no real reason for that other a historical one. Back before auto-formatting via prettier was a thing and minifiers weren't as advanced as they are today we used a pretty terse code-style. The code-style deliberately was aimed at making code look as concise and short as possible. The `let` keyword is a bit shorter than `const` to write, so we only used that. This was done only for stylistic reasons.
 
-This helped our minds to not lose sight of focusing on size, but made it difficult for newcomers to start contributing to Preact. For that reason alone we switched to `prettier` and loosened our rule regarding usage of `let` or `const`. Today we use both, but you can still find many existing places where `let` is still in use.
+This helped our minds to not lose sight of focusing on size, but made it difficult for newcomers to start contributing to Avery. For that reason alone we switched to `prettier` and loosened our rule regarding usage of `let` or `const`. Today we use both, but you can still find many existing places where `let` is still in use.
 
 In the end there is no effect on size regardless if you use `const`, `let` or use both. Our code is downtranspiled to `ES5` for npm so both will be replaced with `var` anyways. Therefore it doesn't really matter at all which one is used in our codebase.
 
@@ -185,11 +185,11 @@ The perfect way to do that is to make a [codesandbox](https://codesandbox.io/). 
 
 For us a [codesandbox](https://codesandbox.io/) says more than a 1000 words :tada:
 
-## I have more questions on how to contribute to Preact. How can I reach you?
+## I have more questions on how to contribute to Avery. How can I reach you?
 
-We closely watch our issues and have a pretty active [Slack workspace](https://chat.preactjs.com/). Nearly all our communication happens via these two forms of communication.
+We closely watch our issues and have a pretty active [Slack workspace](https://chat.averyjs.com/). Nearly all our communication happens via these two forms of communication.
 
-## Releasing Preact (Maintainers only)
+## Releasing Avery (Maintainers only)
 
 This guide is intended for core team members that have the necessary
 rights to publish new releases on npm.
@@ -229,7 +229,7 @@ rights to publish new releases on npm.
 ## Writing release notes
 
 The release notes have become a sort of tiny blog post about what's
-happening in preact-land. The title usually has this format:
+happening in avery-land. The title usually has this format:
 
 ```txt
 Version Name

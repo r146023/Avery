@@ -1,4 +1,4 @@
-const { render, hydrate, unmountComponentAtNode } = require('preact/compat');
+const { render, hydrate, unmountComponentAtNode } = require('avery/compat');
 
 function createRoot(container) {
 	return {

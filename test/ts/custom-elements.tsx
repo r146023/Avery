@@ -33,7 +33,7 @@ interface WhateverElementEvent {
 	eventProp: number;
 }
 
-// preact.JSX.HTMLAttributes also appears to work here but for consistency,
+// avery.JSX.HTMLAttributes also appears to work here but for consistency,
 // let's use createElement.JSX
 interface WhateveElAttributes extends createElement.JSX.HTMLAttributes {
 	someattribute?: string;

@@ -1,7 +1,7 @@
-import { setupRerender, act } from 'preact/test-utils';
-import { createElement, render, createContext, Component } from 'preact';
+import { setupRerender, act } from 'avery/test-utils';
+import { createElement, render, createContext, Component } from 'avery';
 import { vi } from 'vitest';
-import { useState, useContext, useEffect } from 'preact/hooks';
+import { useState, useContext, useEffect } from 'avery/hooks';
 import { setupScratch, teardown } from '../../../test/_util/helpers';
 
 /** @jsx createElement */
@@ -235,7 +235,7 @@ describe('useState', () => {
 		expect(scratch.textContent).to.equal('hi');
 	});
 
-	// https://github.com/preactjs/preact/issues/3669
+	// https://github.com/averyjs/avery/issues/3669
 	it('correctly updates with multiple state updates', () => {
 		let simulateClick;
 		function TestWidget() {
@@ -261,7 +261,7 @@ describe('useState', () => {
 		expect(scratch.innerHTML).to.equal('<div>Saved!</div>');
 	});
 
-	// https://github.com/preactjs/preact/issues/3674
+	// https://github.com/averyjs/avery/issues/3674
 	it('ensure we iterate over all hooks', () => {
 		let open, close;
 
@@ -386,7 +386,7 @@ describe('useState', () => {
 		expect(cleanupSpy).not.toHaveBeenCalled();
 	});
 
-	// see preactjs/preact#3731
+	// see averyjs/avery#3731
 	it('respects updates initiated from the parent', () => {
 		let setChild, setParent;
 		const Child = props => {

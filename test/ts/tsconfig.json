@@ -13,8 +13,8 @@
     "jsxFragmentFactory": "Fragment",
     "skipLibCheck": true,
     "paths": {
-      "preact": ["../../"],
-      "preact/*": ["../../*"]
+      "avery": ["../../"],
+      "avery/*": ["../../*"]
     }
   },
   "include": ["./**/*.ts", "./**/*.tsx"]

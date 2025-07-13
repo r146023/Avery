@@ -1,4 +1,4 @@
-// Users who only use Preact for SSR might not specify "dom" in their lib in tsconfig.json
+// Users who only use Avery for SSR might not specify "dom" in their lib in tsconfig.json
 /// <reference lib="dom" />
 
 import {
@@ -6,9 +6,9 @@ import {
 	Component,
 	ComponentType,
 	FunctionComponent,
-	PreactDOMAttributes,
+	AveryDOMAttributes,
 	VNode
-} from 'preact';
+} from 'avery';
 
 type Defaultize<Props, Defaults> =
 	// Distribute over unions
@@ -626,7 +626,7 @@ export namespace JSXInternal {
 		EventHandler<TargetedPictureInPictureEvent<Target>>;
 
 	export interface DOMAttributes<Target extends EventTarget>
-		extends PreactDOMAttributes {
+		extends AveryDOMAttributes {
 		// Image Events
 		onLoad?: GenericEventHandler<Target> | undefined;
 		onLoadCapture?: GenericEventHandler<Target> | undefined;

@@ -7,9 +7,9 @@ import React, {
 	useEffect,
 	Fragment,
 	useId
-} from 'preact/compat';
+} from 'avery/compat';
 import { setupScratch, teardown } from '../../../test/_util/helpers';
-import { setupRerender, act } from 'preact/test-utils';
+import { setupRerender, act } from 'avery/test-utils';
 import { expect } from 'chai';
 import { vi } from 'vitest';
 

@@ -1,5 +1,5 @@
 module.exports = {
-	repo: 'preactjs/preact',
+	repo: 'averyjs/avery',
 	path: ['./{compat,debug,hooks,}/dist/**/!(*.map)'],
 	branch: 'main'
 };

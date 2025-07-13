@@ -1,4 +1,4 @@
-import { Component, createElement, options, Fragment } from 'preact';
+import { Component, createElement, options, Fragment } from 'avery';
 import { MODE_HYDRATE } from '../../src/constants';
 import { assign } from './util';
 

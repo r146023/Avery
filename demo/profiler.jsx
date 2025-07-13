@@ -1,4 +1,4 @@
-import { createElement, Component, options } from 'preact';
+import { createElement, Component, options } from 'avery';
 
 function getPrimes(max) {
 	let sieve = [],
@@ -67,7 +67,7 @@ export default class ProfilerDemo extends Component {
 	render() {
 		return (
 			<div class="foo">
-				<h1>⚛ Preact</h1>
+				<h1>⚛ Avery</h1>
 				<p>
 					<b>Devtools Profiler integration 🕒</b>
 				</p>

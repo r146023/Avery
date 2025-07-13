@@ -1,7 +1,7 @@
-import { Fragment, createElement, render } from 'preact';
+import { Fragment, createElement, render } from 'avery';
 import { setupScratch, teardown } from '../../../test/_util/helpers';
-import { useErrorBoundary, useLayoutEffect, useState } from 'preact/hooks';
-import { setupRerender } from 'preact/test-utils';
+import { useErrorBoundary, useLayoutEffect, useState } from 'avery/hooks';
+import { setupRerender } from 'avery/test-utils';
 import { vi } from 'vitest';
 
 /** @jsx createElement */

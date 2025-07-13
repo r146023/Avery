@@ -1,5 +1,5 @@
-import { options, createElement, render, Component } from 'preact';
-import { teardown, setupRerender } from 'preact/test-utils';
+import { options, createElement, render, Component } from 'avery';
+import { teardown, setupRerender } from 'avery/test-utils';
 import { vi } from 'vitest';
 
 /** @jsx createElement */

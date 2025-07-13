@@ -1,4 +1,4 @@
-import { render } from 'preact';
+import { render } from 'avery';
 import {
 	setupScratch,
 	teardown,
@@ -6,10 +6,10 @@ import {
 	supportsPassiveEvents
 } from '../../../test/_util/helpers';
 
-import React, { createElement } from 'preact/compat';
+import React, { createElement } from 'avery/compat';
 import { vi } from 'vitest';
 
-describe('preact/compat events', () => {
+describe('avery/compat events', () => {
 	/** @type {HTMLDivElement} */
 	let scratch;
 	let proto;

@@ -1,4 +1,4 @@
-import React, { createElement, unmountComponentAtNode } from 'preact/compat';
+import React, { createElement, unmountComponentAtNode } from 'avery/compat';
 import { setupScratch, teardown } from '../../../test/_util/helpers';
 
 describe('unmountComponentAtNode', () => {
